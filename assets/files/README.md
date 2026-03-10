@@ -1,5 +1,7 @@
-Place your resume PDF in this folder and rename it to `resume.pdf`.
+This folder contains downloadable documents for the site.
 
-The homepage and links already point to:
+Reserved file:
 
 - `assets/files/resume.pdf`
+
+Place your resume here when ready and keep the file name as `resume.pdf`.
