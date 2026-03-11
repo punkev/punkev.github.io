@@ -186,6 +186,35 @@ p {
   font-size: 1.06rem;
 }
 
+.hero-title {
+  max-width: none;
+}
+
+.type-line {
+  display: block;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.08em solid rgba(255, 122, 69, 0.9);
+  will-change: width, opacity;
+}
+
+.type-line-short {
+  animation:
+    typing-short 0.7s steps(3, end) 0.2s forwards,
+    caret-blink 0.8s step-end 0.2s 2,
+    caret-hide 0.01s linear 0.95s forwards;
+}
+
+.type-line-long {
+  opacity: 0;
+  animation:
+    line-reveal 0.01s linear 1s forwards,
+    typing-long 1.8s steps(17, end) 1s forwards,
+    caret-blink 0.8s step-end 1s 5,
+    caret-hide 0.01s linear 2.9s forwards;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -202,17 +231,32 @@ p {
   border-radius: 999px;
   text-decoration: none;
   font-weight: 700;
+  border: 1px solid var(--line);
+  background: linear-gradient(135deg, rgba(56, 18, 73, 0.78), rgba(19, 10, 27, 0.88));
+  color: var(--text);
+  transition:
+    background 160ms ease,
+    color 160ms ease,
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease;
 }
 
 .button-primary {
-  background: linear-gradient(135deg, var(--accent), #ff7a45);
-  color: #fff5f8;
-  box-shadow: 0 10px 30px rgba(255, 77, 109, 0.3);
+  box-shadow: 0 10px 30px rgba(255, 77, 109, 0.16);
 }
 
 .button-secondary {
-  border: 1px solid var(--line);
-  background: linear-gradient(135deg, rgba(56, 18, 73, 0.78), rgba(19, 10, 27, 0.88));
+  box-shadow: 0 10px 30px rgba(182, 92, 255, 0.08);
+}
+
+.button:hover,
+.button:focus-visible {
+  background: linear-gradient(135deg, var(--accent), #ff7a45);
+  color: #fff5f8;
+  border-color: rgba(255, 122, 69, 0.5);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(255, 77, 109, 0.28);
 }
 
 .info-list,
@@ -352,6 +396,53 @@ p {
 .footer-nav a:hover,
 .footer-nav a:focus-visible {
   color: var(--accent);
+}
+
+@keyframes typing-short {
+  from {
+    width: 0;
+  }
+  to {
+    width: 3ch;
+  }
+}
+
+@keyframes typing-long {
+  from {
+    width: 0;
+  }
+  to {
+    width: 17ch;
+  }
+}
+
+@keyframes line-reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes caret-blink {
+  0%,
+  100% {
+    border-right-color: rgba(255, 122, 69, 0.9);
+  }
+  50% {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes caret-hide {
+  from {
+    border-right-color: rgba(255, 122, 69, 0.9);
+  }
+  to {
+    border-right-color: transparent;
+    border-right-width: 0;
+  }
 }
 
 @media (max-width: 980px) {
