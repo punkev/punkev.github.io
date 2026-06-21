@@ -4,75 +4,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blogs | Kevin Dsouza</title>
-    <meta
-      name="description"
-      content="Weekly application security writing by Kevin Dsouza on vulnerabilities, secure design, and engineering practice."
-    />
+    <meta name="description" content="Blogs by Kevin Dsouza." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/site.css" />
   </head>
   <body>
+    <div class="noise-layer" aria-hidden="true"></div>
     <div class="page-shell">
-      <header class="site-header site-header-nav-only">
-        <nav class="site-nav site-nav-full" aria-label="Primary">
+      <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Kevin Dsouza home">
+          <span class="brand-mark">kd</span>
+          <span class="brand-text">Kevin Dsouza</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
           <a href="index.html">Home</a>
-          <a href="background.html">My Background</a>
+          <a href="background.html">Background</a>
           <a href="projects.html">Projects</a>
           <a class="active" href="blogs.html">Blogs</a>
         </nav>
       </header>
 
       <main class="inner-page">
-        <section class="page-intro page-intro-compact">
-          <p class="eyebrow">Blogs</p>
-          <h1>Weekly writing on application security.</h1>
+        <section class="page-intro terminal-panel">
+          <p class="prompt">kevin@portfolio:~$ tail -f blogs.log</p>
+          <h1>Blogs</h1>
+          <p>
+            Writing space for AI and security notes. Individual posts will be
+            added here later.
+          </p>
         </section>
 
-        <section class="cards">
-          <article class="panel">
-            <p class="section-label">Upcoming Post</p>
-            <h2>Example: What secure code review still misses in API-heavy systems</h2>
-            <p>
-              Use a short teaser here for the next article you want to publish,
-              then link it to a dedicated post page once ready.
-            </p>
-            <p class="meta">Planned publish date: Add first post date</p>
+        <section class="blog-sections">
+          <article class="panel blog-section-card">
+            <p class="panel-label">AI Blogs</p>
+            <h2>AI related blogs</h2>
+            <div class="empty-slot" aria-label="No AI blog posts yet"></div>
           </article>
 
-          <article class="panel">
-            <p class="section-label">Editorial Direction</p>
-            <h2>Suggested recurring themes</h2>
-            <ul class="detail-list">
-              <li>Application security trends</li>
-              <li>Common flaws and real examples</li>
-              <li>Secure development practices</li>
-              <li>Tooling, workflows, and reviews</li>
-              <li>Weekly commentary on notable issues</li>
-            </ul>
-          </article>
-
-          <article class="panel">
-            <p class="section-label">Posting System</p>
-            <h2>Next step</h2>
-            <p>
-              Once you start publishing, I can turn this into a proper blog
-              index with individual post pages and dates.
-            </p>
+          <article class="panel blog-section-card">
+            <p class="panel-label">Security Blogs</p>
+            <h2>Security related blogs</h2>
+            <div class="empty-slot" aria-label="No security blog posts yet"></div>
           </article>
         </section>
       </main>
 
       <footer class="site-footer">
-        <p class="footer-copy">Kevin Dsouza | Application Security Engineer</p>
-        <nav class="footer-nav" aria-label="Footer">
+        <p>Kevin Dsouza | Information Tech Lead Analyst, VP</p>
+        <nav aria-label="Footer">
           <a href="mailto:dsouza.ke@northeastern.edu">Email</a>
           <a href="https://www.linkedin.com/in/kevin-dsouza-1906">LinkedIn</a>
-          <a href="assets/files/resume.pdf">Resume</a>
+          <a href="assets/files/kevin-dsouza-resume.pdf">Resume</a>
         </nav>
       </footer>
     </div>

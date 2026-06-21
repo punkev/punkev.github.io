@@ -3,25 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kevin Dsouza | Application Security Engineer</title>
+    <title>Kevin Dsouza | Information Tech Lead Analyst, VP</title>
     <meta
       name="description"
-      content="Kevin Dsouza is an Application Security Engineer focused on web security, API security, secure code review, and offensive testing."
+      content="Kevin Dsouza is an Information Tech Lead Analyst, VP focused on application security, penetration testing, API security, and secure code review."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/site.css" />
   </head>
   <body>
+    <div class="noise-layer" aria-hidden="true"></div>
     <div class="page-shell">
-      <header class="site-header site-header-nav-only">
-        <nav class="site-nav site-nav-full" aria-label="Primary">
+      <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Kevin Dsouza home">
+          <span class="brand-mark">kd</span>
+          <span class="brand-text">Kevin Dsouza</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
           <a class="active" href="index.html">Home</a>
-          <a href="background.html">My Background</a>
+          <a href="background.html">Background</a>
           <a href="projects.html">Projects</a>
           <a href="blogs.html">Blogs</a>
         </nav>
@@ -29,109 +34,102 @@
 
       <main>
         <section class="hero">
-          <div class="hero-copy">
-            <p class="eyebrow">Application Security | API Security | Secure Code Review</p>
-            <h1 class="hero-title">
-              <span class="type-line type-line-short">Hi,</span>
-              <span class="type-line type-line-long">Iam Kevin Dsouza!</span>
+          <div class="hero-copy terminal-panel">
+            <p class="prompt">kevin@portfolio:~$ whoami</p>
+            <h1 class="typewriter-title" aria-label="Hi I am Kevin Dsouza">
+              <span>Hi I am Kevin Dsouza</span>
             </h1>
             <p class="hero-text">
-              Security Engineer at Citi working across advanced penetration
-              testing, manual source code review, threat modeling, and
-              application security engineering for web, API, and mobile
-              platforms.
+              Information Tech Lead Analyst, VP at Citi. I work across
+              application security, advanced penetration testing, API security,
+              secure code review, and threat modeling.
             </p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="mailto:dsouza.ke@northeastern.edu">Email Me</a>
-              <a class="button button-secondary" href="https://www.linkedin.com/in/kevin-dsouza-1906">LinkedIn</a>
-              <a class="button button-secondary" href="assets/files/resume.pdf">Resume</a>
+            <div class="hero-actions" aria-label="Contact links">
+              <a class="button button-primary" href="mailto:dsouza.ke@northeastern.edu">Email</a>
+              <a class="button" href="https://www.linkedin.com/in/kevin-dsouza-1906">LinkedIn</a>
+              <a class="button" href="assets/files/kevin-dsouza-resume.pdf">Resume</a>
             </div>
           </div>
 
-          <aside class="hero-card">
-            <h2>Quick Info</h2>
+          <aside class="ops-card">
+            <div class="terminal-bar">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <p class="panel-label">Live Profile</p>
             <dl class="info-list">
               <div>
-                <dt>Email</dt>
-                <dd>dsouza.ke@northeastern.edu</dd>
+                <dt>Role</dt>
+                <dd>Information Tech Lead Analyst, VP</dd>
               </div>
               <div>
-                <dt>Current Role</dt>
-                <dd>Security Engineer (AVP), Enhanced Pentesting and Research at Citi</dd>
+                <dt>Focus</dt>
+                <dd>Web, API, mobile, code review</dd>
               </div>
               <div>
                 <dt>Location</dt>
                 <dd>Miami-Fort Lauderdale Area</dd>
               </div>
               <div>
-                <dt>Focus Areas</dt>
-                <dd>Web security, API security, code review, automation, DevSecOps</dd>
+                <dt>Signal</dt>
+                <dd>AppSec, DevSecOps, offensive research</dd>
               </div>
             </dl>
           </aside>
         </section>
 
+        <section class="command-strip" aria-label="Portfolio sections">
+          <a href="background.html">
+            <span>01</span>
+            <strong>Background</strong>
+          </a>
+          <a href="projects.html">
+            <span>02</span>
+            <strong>Projects</strong>
+          </a>
+          <a href="blogs.html">
+            <span>03</span>
+            <strong>Blogs</strong>
+          </a>
+        </section>
+
         <section class="section-grid">
           <article class="panel panel-wide">
-            <p class="section-label">About Me</p>
-            <h2>Offensive depth with an application security engineering mindset.</h2>
+            <p class="panel-label">Mission</p>
+            <h2>Break systems with discipline. Fix them with context.</h2>
             <p>
-              I work in application security with a focus on identifying,
-              validating, and reducing risk in modern software systems. My
-              background spans advanced white-box and grey-box testing, deep
-              manual code review, secure design analysis, automation, and
-              integrating security practices into engineering workflows. I have
-              worked across banking, enterprise software, and university
-              environments, building a practical view of how security issues
-              appear in real production systems.
+              I like security work that gets close to the code and close to the
+              business logic: tracing data flow, reviewing implementation
+              details, mapping trust boundaries, and turning findings into
+              remediation plans teams can actually ship.
             </p>
           </article>
 
           <article class="panel">
-            <p class="section-label">Current Experience</p>
-            <h2>Citi</h2>
-            <ul class="detail-list">
-              <li>Security Engineer (AVP), Enhanced Pentesting and Research</li>
-              <li>Advanced web, API, and mobile application penetration testing</li>
-              <li>Manual source code review for insecure design and implementation flaws</li>
-              <li>Threat modeling, secure design reviews, and remediation guidance</li>
-            </ul>
-          </article>
-
-        </section>
-
-        <section class="section-grid">
-          <article class="panel panel-wide">
-            <p class="section-label">Selected Experience</p>
-            <h2>Recent roles across finance, product security, and research.</h2>
-            <ul class="detail-list timeline-list">
-              <li><strong>Citi</strong> | Security Engineer (AVP) | Feb 2023 - Present</li>
-              <li><strong>Northeastern University ITS</strong> | Security Researcher | Aug 2022 - Dec 2022</li>
-              <li><strong>NetBrain Technologies</strong> | Application Security Engineer | Jan 2022 - Sep 2022</li>
-              <li><strong>Khoury College of Computer Sciences</strong> | Graduate Teaching Assistant | 2021 - 2022</li>
-            </ul>
-          </article>
-
-          <article class="panel">
-            <p class="section-label">Core Stack</p>
-            <h2>Security focus</h2>
-            <ul class="detail-list">
-              <li>Burp Suite, Checkmarx, Semgrep, Snyk, CodeQL, AppScan</li>
-              <li>Java, Spring, Struts, Node.js, REST APIs, OAuth, JWT</li>
-              <li>SAST, DAST, secure code review, API security, automation</li>
-              <li>Python, Bash, C++, Linux, cloud-hosted environments</li>
+            <p class="panel-label">Toolbox</p>
+            <ul class="tag-list">
+              <li>Burp Suite</li>
+              <li>Checkmarx</li>
+              <li>Semgrep</li>
+              <li>Snyk</li>
+              <li>HCL AppScan</li>
+              <li>Qualys</li>
+              <li>SonarQube</li>
+              <li>Mend / WhiteSource</li>
+              <li>Jenkins</li>
+              <li>Postman</li>
             </ul>
           </article>
         </section>
-
       </main>
 
       <footer class="site-footer">
-        <p class="footer-copy">Kevin Dsouza | Application Security Engineer</p>
-        <nav class="footer-nav" aria-label="Footer">
+        <p>Kevin Dsouza | Information Tech Lead Analyst, VP</p>
+        <nav aria-label="Footer">
           <a href="mailto:dsouza.ke@northeastern.edu">Email</a>
           <a href="https://www.linkedin.com/in/kevin-dsouza-1906">LinkedIn</a>
-          <a href="assets/files/resume.pdf">Resume</a>
+          <a href="assets/files/kevin-dsouza-resume.pdf">Resume</a>
         </nav>
       </footer>
     </div>

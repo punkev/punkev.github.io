@@ -1,8 +1,6 @@
-remote_theme: CaptainIRS/hacker-plus-theme
-
-title:
-author:
-description: 
+title: Kevin Dsouza
+author: Kevin Dsouza
+description: Application security portfolio for Kevin Dsouza, Information Tech Lead Analyst, VP.
 disqus_forum_shortname:
 google_site_verification_content: # The 'content' tag for site verification
 google_analytics: # Your Google Analytics Tracking ID
@@ -40,14 +38,3 @@ plugins:
    - jekyll-seo-tag
    - jemoji
    - jekyll-sitemap
-   - jekyll-github-metadata
-collections:
-   pages:
-      output: true
-      permalink: /:name
-   writeups:
-      output: true
-   solutions:
-      output: true
-   blog:
-      output: true

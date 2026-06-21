@@ -3,76 +3,250 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Background | Kevin Dsouza</title>
+    <title>Background | Kevin Dsouza</title>
     <meta
       name="description"
-      content="Education, certifications, and background details for Kevin Dsouza."
+      content="Background, education, certifications, and security experience for Kevin Dsouza."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/site.css" />
   </head>
   <body>
+    <div class="noise-layer" aria-hidden="true"></div>
     <div class="page-shell">
-      <header class="site-header site-header-nav-only">
-        <nav class="site-nav site-nav-full" aria-label="Primary">
+      <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Kevin Dsouza home">
+          <span class="brand-mark">kd</span>
+          <span class="brand-text">Kevin Dsouza</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
           <a href="index.html">Home</a>
-          <a class="active" href="background.html">My Background</a>
+          <a class="active" href="background.html">Background</a>
           <a href="projects.html">Projects</a>
           <a href="blogs.html">Blogs</a>
         </nav>
       </header>
 
       <main class="inner-page">
-        <section class="page-intro page-intro-compact">
-          <p class="eyebrow">My Background</p>
-          <h1>Education, certifications, and foundation.</h1>
+        <section class="page-intro terminal-panel">
+          <p class="prompt">kevin@portfolio:~$ cat background.md</p>
+          <h1>Background</h1>
+          <p>
+            Application security, penetration testing, secure code review, API
+            security, and DevSecOps experience across enterprise environments.
+          </p>
         </section>
 
-        <section class="cards cards-single">
-          <article class="panel panel-wide">
-            <p class="section-label">Education</p>
-            <h2>Academic background</h2>
-            <ul class="detail-list timeline-list">
-              <li>
-                <strong>Khoury College of Computer Sciences, Northeastern University</strong><br />
-                Master of Science in Cybersecurity | 2021 - 2022
-              </li>
-              <li>
-                <strong>Don Bosco Institute of Technology</strong><br />
-                Bachelor of Engineering in Information Technology | 2016 - 2020
-              </li>
-              <li>
-                <strong>Hiranandani Foundation School</strong><br />
-                I.C.S.E. | 2002 - 2014
-              </li>
+        <section class="background-section">
+          <div class="section-heading">
+            <p class="panel-label">Experience</p>
+            <h2>Newest to oldest</h2>
+          </div>
+
+          <article class="panel experience-card">
+            <div class="experience-meta">
+              <p class="panel-label">Citibank</p>
+              <h2>Information Tech Lead Analyst, VP</h2>
+              <p>Feb 2023 - Present</p>
+            </div>
+            <ul class="detail-list">
+              <li>Performed deep manual source code reviews of Java/Spring services and APIs, identifying authorization flaws, injection and deserialization risks, business logic issues, and misuse of security controls across distributed production systems.</li>
+              <li>Conducted deep-dive white-box penetration testing across web, mobile, and API services to validate secure design assumptions and uncover complex attack chains including SSRF, privilege escalation, auth bypass, and race conditions.</li>
+              <li>Authored application security assessment reports with reproducible PoCs, risk prioritization, and developer-focused guidance across APIs, auth flows, microservice boundaries, and CI/CD-integrated deployments.</li>
+              <li>Validated, triaged, and contextualized SAST and DAST findings by correlating results with code paths and API behavior, reducing false positives and partnering with engineers on production-ready remediation.</li>
+              <li>Established risk-based vulnerability prioritization by correlating exploitability, application exposure, and data sensitivity so teams could focus on findings with real-world impact.</li>
+              <li>Conducted secure design reviews and threat modeling for Java/Spring applications, APIs, and authentication workflows to identify architectural risks early in the SDLC.</li>
+              <li>Developed custom Burp Suite tooling and workflows to automate repetitive testing patterns and accelerate vulnerability discovery.</li>
+              <li>Developed SAGE, a GitHub-based security search automation tool, to identify vulnerable code patterns and recurring security anti-patterns across repositories.</li>
             </ul>
           </article>
 
-          <article class="panel">
-            <p class="section-label">Certifications</p>
-            <h2>Security certifications</h2>
+          <article class="panel experience-card">
+            <div class="experience-meta">
+              <p class="panel-label">Northeastern University, Information Technology Services Department</p>
+              <h2>Security Research Student</h2>
+              <p>Sep 2022 - Dec 2022</p>
+            </div>
             <ul class="detail-list">
-              <li>GIAC Web Application Penetration Tester (GWAPT)</li>
-              <li>GIAC Certified Web Application Defender (GWEB)</li>
-              <li>Certified Ethical Hacker (CEH) v10</li>
-              <li>Network Hacking</li>
-              <li>Ethical Hacking and Website Security</li>
+              <li>Designed and implemented an automated vulnerability discovery framework using open-source tooling to detect OWASP Top 10 application risks and normalize results for remediation across university-managed web environments.</li>
+              <li>Automated discovery of live hosts across distributed subnets and executed targeted application security assessments, integrating scan outputs with centralized logging platforms for risk analysis, reporting, and remediation tracking.</li>
             </ul>
           </article>
+
+          <article class="panel experience-card">
+            <div class="experience-meta">
+              <p class="panel-label">Northeastern University, Khoury College of Computer Sciences</p>
+              <h2>Graduate Teaching Assistant, CY 5001: Cybersecurity Technologies, Threats, and Defense</h2>
+              <p>Sep 2022 - Dec 2022</p>
+            </div>
+            <ul class="detail-list">
+              <li>Assisted Professor Sakib Miazi in teaching core cybersecurity concepts including computer networks, operating systems, server architectures, and scripting for a class of 60+ students.</li>
+              <li>Provided mentorship and technical support on network security, system hardening, and threat identification.</li>
+              <li>Collaborated with faculty to develop lab exercises and course materials focused on virtualization, containerization, and cloud security fundamentals.</li>
+            </ul>
+          </article>
+
+          <article class="panel experience-card">
+            <div class="experience-meta">
+              <p class="panel-label">Northeastern University</p>
+              <h2>Intramural Sports Official</h2>
+              <p>Apr 2022 - Dec 2022</p>
+            </div>
+            <ul class="detail-list">
+              <li>Officiated intramural cricket, soccer, volleyball, and badminton games while enforcing rules and ensuring fair play across competitive leagues and recreational tournaments.</li>
+              <li>Made real-time decisions during fast-paced matches, resolved player disputes professionally, and maintained safe, controlled, and sportsmanlike playing environments.</li>
+              <li>Managed game flow, scoring, and match timing so intramural events ran on schedule and aligned with university recreation standards.</li>
+            </ul>
+          </article>
+
+          <article class="panel experience-card">
+            <div class="experience-meta">
+              <p class="panel-label">NetBrain Technologies</p>
+              <h2>Application Security Engineer Coop</h2>
+              <p>Jan 2022 - Aug 2022</p>
+            </div>
+            <ul class="detail-list">
+              <li>Performed manual penetration testing of web applications and APIs using Burp Suite and Postman, identifying vulnerabilities across authentication, input validation, and business logic layers.</li>
+              <li>Executed and triaged SAST, DAST, and SCA scans using SonarQube, Snyk, Qualys, and Mend, prioritizing exploitable vulnerabilities and reducing false positives across releases.</li>
+              <li>Designed and maintained Jenkins CI/CD pipelines to automate build processes and integrate security testing through SAST, DAST, and SCA tools.</li>
+              <li>Configured and integrated Qualys scans within Jenkins pipelines and standalone environments for automated DAST scanning across deployments.</li>
+              <li>Conducted software composition analysis using Mend, identifying vulnerable third-party components and recommending remediation strategies or compensating controls.</li>
+              <li>Automated provisioning of Linux backend and Windows frontend virtual machines using Jenkins and PowerShell to create repeatable test environments.</li>
+              <li>Managed VMware Horizon environments to support virtualized infrastructure for security testing across multiple operating systems and application environments.</li>
+              <li>Administered Linux and Windows-based testbeds using Jenkins and mRemoteNG for secure access, orchestration, and maintenance of distributed testing environments.</li>
+              <li>Configured reverse proxies for internal tools and services, improving routing, accessibility, and security controls across development and testing environments.</li>
+              <li>Maintained Confluence documentation including vulnerability reports, remediation steps, security policies, and onboarding procedures.</li>
+            </ul>
+          </article>
+
+          <article class="panel experience-card">
+            <div class="experience-meta">
+              <p class="panel-label">Northeastern University, Khoury College of Computer Sciences</p>
+              <h2>Graduate Teaching Assistant, CY 5150: Network Security Practices</h2>
+              <p>Sep 2021 - Dec 2021</p>
+            </div>
+            <ul class="detail-list">
+              <li>Assisted in teaching network security concepts including firewalls, VPNs, wireless security, malware threats, and Internet security principles through lectures, case studies, and labs.</li>
+              <li>Supported students in understanding common network threats, secure configurations, and defensive technologies.</li>
+              <li>Guided students through hands-on laboratory exercises focused on network defense concepts and practical security challenges.</li>
+            </ul>
+          </article>
+
+          <article class="panel experience-card">
+            <div class="experience-meta">
+              <p class="panel-label">Northeastern University, Khoury College of Computer Sciences</p>
+              <h2>Graduate Teaching Assistant, CY 5010: Cybersecurity Principles and Practices</h2>
+              <p>Jun 2021 - Aug 2021</p>
+            </div>
+            <ul class="detail-list">
+              <li>Assisted in teaching core information security principles including confidentiality, integrity, and availability.</li>
+              <li>Guided students through security controls, risk management, and incident response procedures with hands-on lab-based exercises.</li>
+              <li>Evaluated coursework and assignments against security best practices and governance frameworks.</li>
+            </ul>
+          </article>
+
+          <article class="panel experience-card">
+            <div class="experience-meta">
+              <p class="panel-label">Azure Skynet Solutions</p>
+              <h2>Cybersecurity Intern</h2>
+              <p>May 2020 - May 2020</p>
+            </div>
+            <ul class="detail-list">
+              <li>Completed a cybersecurity internship focused on security operations and foundational offensive security concepts, gaining practical exposure to vulnerability assessment techniques and real-world security testing.</li>
+              <li>Applied vulnerability assessment and security testing methodologies to identify, analyze, and understand common application and system security issues.</li>
+            </ul>
+          </article>
+
+          <article class="panel experience-card">
+            <div class="experience-meta">
+              <p class="panel-label">Scoutflo</p>
+              <h2>Security Intern</h2>
+              <p>Jun 2019 - Apr 2020</p>
+            </div>
+            <ul class="detail-list">
+              <li>Assisted in securing and maintaining early-stage cloud and on-prem infrastructure, including basic hardening of Linux and Windows systems across dev/test environments.</li>
+              <li>Supported vulnerability identification and remediation by running security scans, reviewing configurations, and assisting in patch management.</li>
+              <li>Contributed to access control management through user provisioning, periodic access reviews, and least-privilege enforcement.</li>
+              <li>Assisted in implementing security best practices during application setup and deployment, including environment configuration and credential handling.</li>
+              <li>Participated in log monitoring and basic incident investigation while helping improve logging and observability for traceability across systems.</li>
+            </ul>
+          </article>
+
+          <article class="panel experience-card">
+            <div class="experience-meta">
+              <p class="panel-label">Tata Consultancy Services</p>
+              <h2>Web Development Intern</h2>
+              <p>Jun 2018 - Sep 2018</p>
+            </div>
+            <ul class="detail-list">
+              <li>Developed a full-stack job portal application using PHP and MySQL, enabling users to search, filter, and apply for job listings through a dynamic interface.</li>
+              <li>Implemented backend functionality including user authentication, session management, and CRUD operations for job postings.</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="background-section">
+          <div class="section-heading">
+            <p class="panel-label">Education</p>
+            <h2>Institutions</h2>
+          </div>
+
+          <div class="education-grid">
+            <article class="panel education-card">
+              <p class="panel-label">Northeastern University, Khoury College of Computer Sciences</p>
+              <h2>Master of Science in Cybersecurity</h2>
+              <p>Boston, MA | Degree awarded: Dec 2022</p>
+            </article>
+
+            <article class="panel education-card">
+              <p class="panel-label">Don Bosco Institute of Technology, Mumbai University</p>
+              <h2>Bachelor of Technology in Information Technology</h2>
+              <p>Mumbai, India | Degree awarded: Oct 2020</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="background-section">
+          <div class="section-heading">
+            <p class="panel-label">Certifications</p>
+            <h2>Security credentials</h2>
+          </div>
+
+          <div class="education-grid">
+            <article class="panel education-card">
+              <h2>GIAC Certified Web Application Defender</h2>
+              <p>Issued Aug 2025</p>
+            </article>
+
+            <article class="panel education-card">
+              <h2>GIAC Web Application Penetration Tester</h2>
+              <p>Issued Nov 2023</p>
+            </article>
+
+            <article class="panel education-card">
+              <h2>CompTIA Security+</h2>
+              <p>Issued Oct 2021, expired</p>
+            </article>
+
+            <article class="panel education-card">
+              <h2>CEH v10</h2>
+              <p>Issued Dec 2020, expired</p>
+            </article>
+          </div>
         </section>
       </main>
 
       <footer class="site-footer">
-        <p class="footer-copy">Kevin Dsouza | Application Security Engineer</p>
-        <nav class="footer-nav" aria-label="Footer">
+        <p>Kevin Dsouza | Information Tech Lead Analyst, VP</p>
+        <nav aria-label="Footer">
           <a href="mailto:dsouza.ke@northeastern.edu">Email</a>
           <a href="https://www.linkedin.com/in/kevin-dsouza-1906">LinkedIn</a>
-          <a href="assets/files/resume.pdf">Resume</a>
+          <a href="assets/files/kevin-dsouza-resume.pdf">Resume</a>
         </nav>
       </footer>
     </div>
