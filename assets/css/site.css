@@ -256,6 +256,10 @@ h1 {
 
 .typewriter-title {
   max-width: none;
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(1.55rem, 3vw, 2.65rem);
+  font-weight: 800;
+  line-height: 1.12;
 }
 
 .typewriter-title span {
@@ -454,6 +458,10 @@ p {
   font-size: 0.82rem;
 }
 
+.expertise-panel {
+  margin-bottom: 22px;
+}
+
 .inner-page {
   padding-bottom: 28px;
 }
@@ -595,7 +603,7 @@ p {
 .site-footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 18px;
   padding: 18px 20px;
 }
@@ -681,11 +689,12 @@ p {
     font-size: clamp(2.5rem, 15vw, 4rem);
   }
 
+  .typewriter-title {
+    font-size: clamp(1rem, 4.7vw, 1.25rem);
+  }
+
   .typewriter-title span {
-    white-space: normal;
-    animation: none;
-    width: auto;
-    border-right: 0;
+    white-space: nowrap;
   }
 }
 
