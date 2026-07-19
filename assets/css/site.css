@@ -1,24 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Premium Dark Theme Color Palette */
-  --bg-deep: #05070a;
-  --bg-main: #0a0d14;
-  --panel-bg: rgba(13, 20, 32, 0.45);
-  --panel-hover: rgba(18, 28, 45, 0.6);
+  /* Premium Aurora Dark Theme Color Palette */
+  --bg-deep: #06080e;
+  --bg-main: #0b0f17;
+  --panel-bg: rgba(11, 16, 27, 0.45);
+  --panel-hover: rgba(16, 24, 40, 0.6);
   --panel-border: rgba(255, 255, 255, 0.05);
-  --panel-border-focus: rgba(0, 242, 254, 0.3);
+  --panel-border-focus: rgba(168, 85, 247, 0.35);
   
   /* Text and Accents */
-  --text-main: #f1f5f9;
+  --text-main: #f8fafc;
   --text-muted: #94a3b8;
-  --primary: #10b981;      /* Emerald Green */
-  --primary-glow: rgba(16, 185, 129, 0.15);
-  --cyan: #06b6d4;         /* Cyber Cyan */
-  --cyan-glow: rgba(6, 182, 212, 0.2);
-  --purple: #a855f7;       /* Violet Accent */
-  --purple-glow: rgba(168, 85, 247, 0.15);
-  --amber: #f59e0b;        /* Warn/Alert Orange */
+  --primary: #a855f7;      /* Electric Violet/Purple */
+  --primary-glow: rgba(168, 85, 247, 0.15);
+  --cyan: #00f2fe;         /* Aurora Cyan/Blue */
+  --cyan-glow: rgba(0, 242, 254, 0.2);
+  --purple: #ec4899;       /* Rose/Pink Accent */
+  --purple-glow: rgba(236, 72, 153, 0.15);
+  --amber: #f59e0b;        /* Warning Amber */
   --red: #ef4444;          /* Critical Red */
   
   /* Shadow & Radius Defaults */
@@ -319,7 +319,7 @@ h1 {
 
 .terminal-bar span.red { background: var(--red); }
 .terminal-bar span.yellow { background: var(--amber); }
-.terminal-bar span.green { background: var(--primary); }
+.terminal-bar span.green { background: #10b981; }
 
 .info-list {
   display: flex;
