@@ -24,18 +24,18 @@
       name="twitter:description"
       content="AI and security writing focused on AppSec, DevSecOps, secure code review, API security, and automation."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <link rel="shortcut icon" href="assets/favicon.ico" />
     <link rel="stylesheet" href="assets/css/site.css?v=20260622-favicon-ico" />
   </head>
   <body>
-    <div class="noise-layer" aria-hidden="true"></div>
+    <!-- Premium background glowing orbs -->
+    <div class="glow-bg" aria-hidden="true">
+      <div class="glow-orb glow-orb-1"></div>
+      <div class="glow-orb glow-orb-2"></div>
+      <div class="glow-orb glow-orb-3"></div>
+    </div>
+
     <div class="page-shell">
       <header class="site-header">
         <a class="brand" href="index.html" aria-label="Kevin Dsouza home">
@@ -51,35 +51,81 @@
       </header>
 
       <main class="inner-page">
-        <section class="page-intro terminal-panel">
+        <!-- Page Intro Header -->
+        <section class="panel page-intro" style="margin-bottom: 24px;">
           <p class="prompt">kevin@portfolio:~$ tail -f blogs.log</p>
-          <h1>Blogs</h1>
+          <h1 style="margin-bottom: 8px;">Technical Blog</h1>
           <p>
-            Writing space for AI and security notes. Individual posts will be
-            added here later.
+            Insights and research notes focusing on application security, secure code auditing, DevSecOps, and large language model (LLM) security risks.
           </p>
         </section>
 
+        <!-- Blogs layout grid -->
         <section class="blog-sections">
-          <article class="panel blog-section-card">
-            <p class="panel-label">AI Blogs</p>
-            <h2>AI related blogs</h2>
-            <div class="empty-slot" aria-label="No AI blog posts yet"></div>
-          </article>
+          <!-- AI Blogs Column -->
+          <div class="blog-group">
+            <h2>AI & LLM Security <span>Drafts</span></h2>
+            <div class="blog-list">
+              <div class="blog-item">
+                <span class="date">Planned / Q3 2026</span>
+                <h3>LLM Security Risks: OWASP Top 10 for Large Language Models</h3>
+                <p>
+                  Analyzing practical prompt injection vectors and evaluating robust input sanitization and verification bounds inside agentic workflows.
+                </p>
+              </div>
+              
+              <div class="blog-item">
+                <span class="date">Planned / Q4 2026</span>
+                <h3>AI-Assisted Code Audits: Speeding up triage with AST parser wrappers</h3>
+                <p>
+                  Exploring how integrating automated static analysis tools with custom large language model prompts speeds up code auditing and validation pipelines.
+                </p>
+              </div>
 
-          <article class="panel blog-section-card">
-            <p class="panel-label">Security Blogs</p>
-            <h2>Security related blogs</h2>
-            <div class="empty-slot" aria-label="No security blog posts yet"></div>
-          </article>
+              <!-- General Placeholder when list is short -->
+              <div class="blog-placeholder">
+                <div class="blog-placeholder-icon">🤖</div>
+                <p style="font-family: 'Fira Code', monospace; font-size: 0.82rem;">More AI & LLM security drafts compiling...</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Security Blogs Column -->
+          <div class="blog-group">
+            <h2>Application Security <span>Drafts</span></h2>
+            <div class="blog-list">
+              <div class="blog-item">
+                <span class="date">Planned / Q3 2026</span>
+                <h3>Threat Modeling API Boundaries: Beyond basic REST checks</h3>
+                <p>
+                  Why signature-based checkers frequently miss broken object level authorizations (BOLA) and how teams can implement scalable code verification rules.
+                </p>
+              </div>
+
+              <div class="blog-item">
+                <span class="date">Planned / Q3 2026</span>
+                <h3>Custom Semgrep Rules for Java Web apps: Deserialization Traps</h3>
+                <p>
+                  A step-by-step guide to writing precise custom rules for Java Spring environments, targeting unsafe deserializations and database concatenations.
+                </p>
+              </div>
+
+              <!-- General Placeholder when list is short -->
+              <div class="blog-placeholder">
+                <div class="blog-placeholder-icon">🛡️</div>
+                <p style="font-family: 'Fira Code', monospace; font-size: 0.82rem;">More AppSec research drafts compiling...</p>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
 
       <footer class="site-footer">
-        <nav aria-label="Footer">
+        <p>&copy; 2026 Kevin Dsouza</p>
+        <nav aria-label="Footer Navigation">
           <a href="mailto:kevin.dsouza.cyber@gmail.com">Email</a>
-          <a href="https://www.linkedin.com/in/kevin-dsouza-1906">LinkedIn</a>
-          <a href="assets/files/kevin-dsouza-resume.pdf">Resume</a>
+          <a href="https://www.linkedin.com/in/kevin-dsouza-1906" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="assets/files/kevin-dsouza-resume.pdf" target="_blank">Resume</a>
         </nav>
       </footer>
     </div>

@@ -78,18 +78,18 @@
         }
       }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <link rel="shortcut icon" href="assets/favicon.ico" />
     <link rel="stylesheet" href="assets/css/site.css?v=20260622-favicon-ico" />
   </head>
   <body>
-    <div class="noise-layer" aria-hidden="true"></div>
+    <!-- Premium background glowing orbs -->
+    <div class="glow-bg" aria-hidden="true">
+      <div class="glow-orb glow-orb-1"></div>
+      <div class="glow-orb glow-orb-2"></div>
+      <div class="glow-orb glow-orb-3"></div>
+    </div>
+
     <div class="page-shell">
       <header class="site-header">
         <a class="brand" href="index.html" aria-label="Kevin Dsouza home">
@@ -105,97 +105,107 @@
       </header>
 
       <main>
+        <!-- Hero Grid Section -->
         <section class="hero">
-          <div class="hero-copy terminal-panel">
-            <p class="prompt">kevin@portfolio:~$ whoami</p>
-            <h1 class="typewriter-title" aria-label="Hi I am Kevin Dsouza">
-              <span>Hi I am Kevin Dsouza</span>
+          <div class="hero-copy panel">
+            <h1 class="typewriter-title">
+              <span>Hi, I'm Kevin Dsouza</span>
             </h1>
             <p class="hero-text">
               Application Security Engineer specializing in secure code review,
               API security, manual penetration testing, and DevSecOps security
-              automation for enterprise-scale applications.
+              automation for enterprise-scale systems.
             </p>
-            <div class="hero-actions" aria-label="Contact links">
-              <a class="button button-primary" href="mailto:kevin.dsouza.cyber@gmail.com">Email</a>
-              <a class="button" href="https://www.linkedin.com/in/kevin-dsouza-1906">LinkedIn</a>
-              <a class="button" href="assets/files/kevin-dsouza-resume.pdf">Resume</a>
+            <div class="hero-actions" aria-label="Contact actions">
+              <a class="button button-primary" href="mailto:kevin.dsouza.cyber@gmail.com">Email Me</a>
+              <a class="button" href="https://www.linkedin.com/in/kevin-dsouza-1906" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="button" href="assets/files/kevin-dsouza-resume.pdf" target="_blank">Resume PDF</a>
             </div>
           </div>
 
-          <aside class="ops-card">
+          <aside class="panel ops-card">
             <div class="terminal-bar">
-              <span></span>
-              <span></span>
-              <span></span>
+              <span class="red"></span>
+              <span class="yellow"></span>
+              <span class="green"></span>
             </div>
-            <p class="panel-label">Live Profile</p>
+            <p class="panel-label">Current Role</p>
             <dl class="info-list">
-              <div>
-                <dt>Role</dt>
+              <li>
+                <dt>Title</dt>
                 <dd>Information Tech Lead Analyst, VP</dd>
-              </div>
-              <div>
-                <dt>Focus</dt>
-                <dd>Web, API, mobile, code review</dd>
-              </div>
-              <div>
+              </li>
+              <li>
+                <dt>Organization</dt>
+                <dd>Citibank</dd>
+              </li>
+              <li>
+                <dt>Focus Areas</dt>
+                <dd>Web, API, Mobile, Code Audit</dd>
+              </li>
+              <li>
                 <dt>Location</dt>
-                <dd>Miami-Fort Lauderdale Area</dd>
-              </div>
-              <div>
-                <dt>Signal</dt>
-                <dd>AppSec, DevSecOps, offensive research</dd>
-              </div>
+                <dd>Miami, FL Area</dd>
+              </li>
             </dl>
           </aside>
         </section>
 
-        <section class="command-strip" aria-label="Portfolio sections">
+        <!-- Command navigation strip -->
+        <section class="command-strip" aria-label="Quick Navigation">
           <a href="background.html">
-            <span>01</span>
-            <strong>Background</strong>
+            <span>01 / BACKGROUND</span>
+            <strong>Work Experience & Education</strong>
+            <p>Details about Citi, NetBrain, and graduate cybersecurity teaching roles.</p>
           </a>
           <a href="projects.html">
-            <span>02</span>
-            <strong>Projects</strong>
+            <span>02 / PROJECTS</span>
+            <strong>Security Engineering</strong>
+            <p>Vulnerability scanners, TCP covert channels, and wireless security papers.</p>
           </a>
           <a href="blogs.html">
-            <span>03</span>
-            <strong>Blogs</strong>
+            <span>03 / BLOGS</span>
+            <strong>Notes & Research</strong>
+            <p>Thoughts and insights on AppSec trends, secure coding, and AI security.</p>
           </a>
         </section>
 
-        <section class="section-grid">
-          <article class="panel panel-full">
-            <p class="panel-label">Mission</p>
-            <h2>Find what scanners miss. Prove impact. Help teams fix it.</h2>
-            <p>
-              My work focuses on identifying security flaws that automated tools
-              often miss, validating exploitability, communicating real business
-              impact, and helping development teams remediate vulnerabilities
-              effectively.
-            </p>
-            <p class="mission-lede">My core experience includes:</p>
-            <ul class="detail-list mission-list">
-              <li>Application security testing</li>
-              <li>API security assessments</li>
-              <li>Java/Spring source code review</li>
-              <li>Authentication and authorization testing</li>
-              <li>Apigee API security</li>
-              <li>Vulnerability triage and remediation guidance</li>
-            </ul>
-            <p>
-              I work closely with engineering teams to translate complex
-              security findings into clear, practical remediation steps and help
-              improve security earlier in the development lifecycle.
-            </p>
-          </article>
+        <!-- Dynamic Emulated Console -->
+        <section class="panel interactive-terminal" aria-label="Interactive Terminal">
+          <div class="terminal-header">
+            <span class="terminal-title">kevin@dsouza:~$ (Interactive Shell)</span>
+            <div class="terminal-bar">
+              <span class="red"></span>
+              <span class="yellow"></span>
+              <span class="green"></span>
+            </div>
+          </div>
+          <div class="terminal-body" id="terminal-body">
+            <!-- Initial content loaded via javascript -->
+          </div>
         </section>
 
+        <!-- Mission statement panel -->
+        <section class="panel" style="margin-top: 24px;">
+          <p class="panel-label">Core Philosophy</p>
+          <h2>Find what scanners miss. Prove exploitability. Help developers remediate.</h2>
+          <p style="margin-bottom: 20px;">
+            My experience is centered around finding high-severity vulnerabilities that automated security tooling
+            overlooks, validating their exploitability with reproducible Proof-of-Concepts (PoCs), and assisting engineering teams in implementing effective security controls.
+          </p>
+          <p class="mission-lede">Core areas of focus:</p>
+          <ul class="detail-list">
+            <li><strong>White-Box Assessments:</strong> Comprehensive source code reviews focusing on data flow analysis, input validation, and access control models.</li>
+            <li><strong>API Security:</strong> Auditing REST APIs, OAuth2/JWT integrations, and Apigee gateways to identify authentication and authorization bypasses.</li>
+            <li><strong>Security Automation:</strong> Automating recurring testing patterns, code queries, and container/infrastructure scanning pipelines.</li>
+          </ul>
+        </section>
+
+        <!-- Toolbox and Skills section -->
         <section class="skills-stack">
-          <article class="panel skill-panel">
-            <p class="panel-label">Toolbox</p>
+          <article class="panel">
+            <p class="panel-label">Security Toolbox</p>
+            <h3 style="margin-bottom: 15px; font-size: 1.3rem;">Tools of the Trade</h3>
             <ul class="tag-list">
               <li>Burp Suite</li>
               <li>Checkmarx</li>
@@ -210,31 +220,142 @@
             </ul>
           </article>
 
-          <article class="panel skill-panel">
-            <p class="panel-label">Core Enterprise Skills</p>
+          <article class="panel">
+            <p class="panel-label">Skills Stack</p>
+            <h3 style="margin-bottom: 15px; font-size: 1.3rem;">Methodologies</h3>
             <ul class="tag-list">
               <li>Secure Code Review</li>
               <li>API Security</li>
               <li>Manual Penetration Testing</li>
-              <li>White-box Penetration Testing</li>
+              <li>White-box Testing</li>
               <li>Threat Modeling</li>
-              <li>DevSecOps</li>
-              <li>SAST</li>
-              <li>DAST</li>
-              <li>SCA</li>
+              <li>DevSecOps Pipelines</li>
+              <li>SAST / DAST / SCA</li>
               <li>Vulnerability Prioritization</li>
+              <li>Remediation Guidance</li>
             </ul>
           </article>
         </section>
       </main>
 
       <footer class="site-footer">
-        <nav aria-label="Footer">
+        <p>&copy; 2026 Kevin Dsouza</p>
+        <nav aria-label="Footer Navigation">
           <a href="mailto:kevin.dsouza.cyber@gmail.com">Email</a>
-          <a href="https://www.linkedin.com/in/kevin-dsouza-1906">LinkedIn</a>
-          <a href="assets/files/kevin-dsouza-resume.pdf">Resume</a>
+          <a href="https://www.linkedin.com/in/kevin-dsouza-1906" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="assets/files/kevin-dsouza-resume.pdf" target="_blank">Resume</a>
         </nav>
       </footer>
     </div>
+
+    <!-- Terminal Emulation Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const terminalBody = document.getElementById('terminal-body');
+        
+        const welcomeMessage = [
+          'Session initialized: SECURE_SHELL_v1.2.6',
+          'Connecting to server...',
+          'Logged in successfully as guest@dsouza.portfolio.',
+          'Type "help" to list available commands.'
+        ];
+
+        let lineBuffer = [];
+
+        function appendLine(text, cssClass = '') {
+          const line = document.createElement('div');
+          line.className = `terminal-line ${cssClass}`;
+          line.innerHTML = text;
+          terminalBody.appendChild(line);
+          terminalBody.scrollTop = terminalBody.scrollHeight;
+        }
+
+        function createInputRow() {
+          const row = document.createElement('div');
+          row.className = 'terminal-input-row';
+          row.innerHTML = `
+            <span class="terminal-prompt">guest@dsouza:~$</span>
+            <input type="text" class="terminal-input" autocomplete="off" spellcheck="false" autofocus />
+          `;
+          terminalBody.appendChild(row);
+          terminalBody.scrollTop = terminalBody.scrollHeight;
+
+          const input = row.querySelector('.terminal-input');
+          input.focus();
+          
+          // Re-focus when clicking inside terminal body
+          terminalBody.addEventListener('click', () => {
+            input.focus();
+          });
+
+          input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+              const command = input.value.trim();
+              
+              // Remove active input state and replace with static text line
+              row.remove();
+              appendLine(`<span class="terminal-prompt">guest@dsouza:~$</span> ${command}`);
+              
+              if (command.length > 0) {
+                handleCommand(command.toLowerCase());
+              } else {
+                createInputRow();
+              }
+            }
+          });
+        }
+
+        function handleCommand(cmd) {
+          switch(cmd) {
+            case 'help':
+              appendLine('Available Commands:', 'output-info');
+              appendLine('&nbsp;&nbsp;about&nbsp;&nbsp;&nbsp;&nbsp;- About Kevin Dsouza');
+              appendLine('&nbsp;&nbsp;skills&nbsp;&nbsp;&nbsp;- Security toolbox and core skills');
+              appendLine('&nbsp;&nbsp;projects&nbsp;- View detailed security engineering projects');
+              appendLine('&nbsp;&nbsp;clear&nbsp;&nbsp;&nbsp;&nbsp;- Clear the console output');
+              appendLine('&nbsp;&nbsp;help&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Display this guide');
+              break;
+            case 'about':
+              appendLine('Profile: Kevin Dsouza', 'output-info');
+              appendLine('Role: Application Security Engineer & Citibank VP.');
+              appendLine('Mission: Audit code, discover high-risk bugs, and deliver remediation steps.');
+              appendLine('Key Experience: Extensive enterprise white-box testing and API security audits.');
+              break;
+            case 'skills':
+              appendLine('Enterprise Skills:', 'output-info');
+              appendLine('&nbsp;&nbsp;Methodologies: Secure Code Review, API Auditing, Manual Penetration Testing, Threat Modeling');
+              appendLine('&nbsp;&nbsp;Toolbox: Burp Suite, Checkmarx, Semgrep, Snyk, AppScan, Qualys, SonarQube, Jenkins');
+              break;
+            case 'projects':
+              appendLine('Selected Research & Engineering Projects:', 'output-info');
+              appendLine('&nbsp;&nbsp;1. Open-Source Web Security Scanner (Jenkins pipeline + OWASP ZAP/Nikto)');
+              appendLine('&nbsp;&nbsp;2. TCP Covert Network Channel (Stealthy post-exploitation exfiltration)');
+              appendLine('&nbsp;&nbsp;3. IEEE 802.11 Deauth Research (MAC-layer denial-of-service study)');
+              appendLine('Use navigation menu links to view full PDF research reports.', 'output-warn');
+              break;
+            case 'clear':
+              terminalBody.innerHTML = '';
+              break;
+            default:
+              appendLine(`Command not found: ${cmd}. Type "help" for a list of commands.`, 'output-warn');
+          }
+          createInputRow();
+        }
+
+        // Print initial message logs with a small delay
+        let logIndex = 0;
+        function printWelcome() {
+          if (logIndex < welcomeMessage.length) {
+            appendLine(welcomeMessage[logIndex], logIndex === 3 ? 'output-info' : '');
+            logIndex++;
+            setTimeout(printWelcome, 150);
+          } else {
+            createInputRow();
+          }
+        }
+        
+        printWelcome();
+      });
+    </script>
   </body>
 </html>

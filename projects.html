@@ -24,18 +24,18 @@
       name="twitter:description"
       content="Open-source security scanner, covert network channel research, and IEEE 802.11 deauthentication attack research."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <link rel="shortcut icon" href="assets/favicon.ico" />
     <link rel="stylesheet" href="assets/css/site.css?v=20260622-favicon-ico" />
   </head>
   <body>
-    <div class="noise-layer" aria-hidden="true"></div>
+    <!-- Premium background glowing orbs -->
+    <div class="glow-bg" aria-hidden="true">
+      <div class="glow-orb glow-orb-1"></div>
+      <div class="glow-orb glow-orb-2"></div>
+      <div class="glow-orb glow-orb-3"></div>
+    </div>
+
     <div class="page-shell">
       <header class="site-header">
         <a class="brand" href="index.html" aria-label="Kevin Dsouza home">
@@ -51,138 +51,137 @@
       </header>
 
       <main class="inner-page">
-        <section class="page-intro terminal-panel">
+        <!-- Page Intro Header -->
+        <section class="panel page-intro" style="margin-bottom: 24px;">
           <p class="prompt">kevin@portfolio:~$ ls projects/</p>
-          <h1>Projects</h1>
+          <h1 style="margin-bottom: 8px;">Security Projects</h1>
           <p>
-            Selected academic and security engineering projects, ordered from
-            newest to oldest.
+            Selected academic research and security engineering projects. Click on the action button in each card to read the full technical report PDF.
           </p>
         </section>
 
+        <!-- Projects Showcase list -->
         <section class="project-list">
-          <article class="panel project-summary">
-            <div class="project-heading">
+          <!-- ZAP Scanner Project -->
+          <article class="panel project-card">
+            <div class="project-card-header">
               <div>
                 <p class="panel-label">Capstone Project</p>
                 <h2>Open-Source Web Security Scanner</h2>
               </div>
-              <a class="file-link" href="assets/files/capstone-open-source-security-scanner.pdf">View Open-Source Security Scanner PDF</a>
+              <a class="file-link" href="assets/files/capstone-open-source-security-scanner.pdf" target="_blank">
+                <span>View PDF Report</span> &rarr;
+              </a>
             </div>
 
             <p>
-              This capstone project focused on building an open-source security
-              scanning solution for Northeastern ITS. The goal was to reduce
-              reliance on proprietary scanning platforms and provide a custom,
-              scalable alternative that could fit the university's operational
-              requirements.
+              Built an open-source security scanning framework for Northeastern University ITS to serve as a custom, scalable alternative to expensive proprietary web vulnerability scanner platforms.
             </p>
+            
             <p>
-              The solution was designed around a Jenkins-driven pipeline that
-              accepts a text or CSV list of IP addresses, creates build folders,
-              and iteratively runs selected security tools against each target.
-              Scan output is generated in structured formats and consolidated
-              through Python processing for reporting.
+              The solution consists of a Jenkins-driven orchestration pipeline that processes targets from list files, initiates containers, and iteratively runs targeted scanning tools against the target scope. Python scripts process and normalize JSON/XML raw tool reports into readable unified summary formats.
             </p>
-            <p>
-              The project selected OWASP ZAP for web application scanning,
-              Nikto for web server and application checks, and testssl.sh for
-              SSL/TLS service-level assessment. These tools were chosen because
-              they are open source, actively maintained, and suitable for
-              repeatable security assessments.
-            </p>
-            <p>
-              The final architecture emphasized scalability, simple reporting,
-              privacy, and extensibility. Future work included integration with
-              Microsoft Sentinel, running the solution beyond sandbox testing,
-              tuning latency, and potentially releasing the project for broader
-              community use.
-            </p>
+
+            <ul class="detail-list">
+              <li>Integrated <strong>OWASP ZAP API</strong> for automated active and passive web application vulnerability assessments.</li>
+              <li>Configured <strong>Nikto</strong> modules to detect outdated server configurations, default configurations, and CGI security risks.</li>
+              <li>Incorporated <strong>testssl.sh</strong> to verify SSL/TLS service implementations, checking for weak cipher suites and known protocol flaws.</li>
+            </ul>
+
+            <h4 style="font-size: 0.9rem; color: var(--text-main); margin-top: 10px;">Tech Stack:</h4>
+            <ul class="tag-list">
+              <li>Jenkins Pipelines</li>
+              <li>OWASP ZAP API</li>
+              <li>Nikto</li>
+              <li>testssl.sh</li>
+              <li>Python</li>
+              <li>Docker Containers</li>
+              <li>Linux Bash</li>
+            </ul>
           </article>
 
-          <article class="panel project-summary">
-            <div class="project-heading">
+          <!-- Covert Channel Project -->
+          <article class="panel project-card">
+            <div class="project-card-header">
               <div>
                 <p class="panel-label">Network Security Research</p>
                 <h2>TCP Covert Network Channel Research</h2>
               </div>
-              <a class="file-link" href="assets/files/covert-network-channel-report.pdf">View Covert Network Channel PDF</a>
+              <a class="file-link" href="assets/files/covert-network-channel-report.pdf" target="_blank">
+                <span>View PDF Report</span> &rarr;
+              </a>
             </div>
 
             <p>
-              This project investigated covert network channels as a
-              post-exploitation technique for stealthy data movement. The work
-              explored how attackers can hide communication inside legitimate
-              network behavior to avoid detection by administrators and
-              defensive monitoring systems.
+              Researched and implemented a covert communication channel as a post-exploitation technique for stealth data exfiltration and Command & Control (C2) operations.
             </p>
+            
             <p>
-              The implementation used TCP source port numbers as the covert
-              carrier. Data was converted, encrypted, hashed, and transmitted in
-              small chunks through crafted TCP packets between a client and
-              server, with the server reconstructing and decrypting the hidden
-              message.
+              The custom client-server architecture encodes characters into binary, encrypts the payload, hashes chunks to ensure integrity, and sends them hidden inside the ephemeral Source Port header fields of outbound TCP packets. The listener logs and decodes the stream back into plain text.
             </p>
-            <p>
-              The project evaluated the channel using Wireshark packet captures
-              and Snort intrusion detection. The team compared the covert
-              traffic against normal traffic and verified that encrypted
-              transmission did not reveal clear payload content in packet
-              analysis.
-            </p>
-            <p>
-              The results showed successful end-to-end communication while
-              avoiding Snort alerts in the tested setup. The report also
-              identified future improvements, including adaptive protocol
-              selection, timing changes based on baseline traffic, and
-              alternative carriers such as DNS, HTTP, or HTTPS.
-            </p>
+
+            <ul class="detail-list">
+              <li>Evaluated the covert channel stealth by recording pcap streams and analyzing them under <strong>Wireshark</strong> configurations.</li>
+              <li>Tested standard rulesets on a local <strong>Snort Intrusion Detection System (IDS)</strong>, validating that the covert payloads bypass signature-based detections.</li>
+              <li>Documented defensive mitigation strategies, including packet normalization and protocol anomaly detections.</li>
+            </ul>
+
+            <h4 style="font-size: 0.9rem; color: var(--text-main); margin-top: 10px;">Tech Stack:</h4>
+            <ul class="tag-list">
+              <li>TCP/IP Protocols</li>
+              <li>Snort IDS</li>
+              <li>Wireshark</li>
+              <li>Python Scapy</li>
+              <li>Cryptography (AES)</li>
+              <li>Network Packet Crafting</li>
+            </ul>
           </article>
 
-          <article class="panel project-summary">
-            <div class="project-heading">
+          <!-- Deauthentication Attack Research -->
+          <article class="panel project-card">
+            <div class="project-card-header">
               <div>
                 <p class="panel-label">Wireless Security Research</p>
                 <h2>IEEE 802.11 Deauthentication Attack Research</h2>
               </div>
-              <a class="file-link" href="assets/files/deauthentication-attack-research-paper.pdf">View Deauthentication Attack PDF</a>
+              <a class="file-link" href="assets/files/deauthentication-attack-research-paper.pdf" target="_blank">
+                <span>View PDF Research</span> &rarr;
+              </a>
             </div>
 
             <p>
-              This research paper examined deauthentication attacks against
-              IEEE 802.11 wireless networks. The project focused on the weakness
-              of management frames, which are not authenticated or encrypted in
-              the same way as protected data traffic.
+              Investigated the vulnerabilities of unencrypted management frames in wireless networks, evaluating practical MAC-layer Denial of Service (DoS) attacks.
             </p>
+            
             <p>
-              The paper explained how attackers can spoof deauthentication or
-              disassociation frames and cause clients to disconnect from a
-              legitimate access point. It framed the attack as a MAC-layer
-              denial-of-service issue that can be launched with inexpensive,
-              readily available hardware.
+              The study outlines how attackers exploit the lack of authentication in 802.11 management packets to send spoofed deauthentication frames. We set up an ESP8266 NodeMCU module to scan access points, clone targeting parameters, and trigger frame storms to test deauth impact.
             </p>
-            <p>
-              The experimental analysis used an ESP8266-based NodeMCU deauther
-              module with an OLED display. The setup scanned nearby access
-              points, selected a target, and triggered deauthentication, probe,
-              or beacon-frame attacks through a local web interface.
-            </p>
-            <p>
-              The research also reviewed defensive ideas such as pseudo-random
-              sequence number validation and authentication-based frame
-              verification. The project highlighted how wireless management
-              frame weaknesses can create practical availability risks even when
-              higher-level wireless encryption is in place.
-            </p>
+
+            <ul class="detail-list">
+              <li>Deployed an <strong>ESP8266 NodeMCU</strong> board loaded with custom C++ firmware to act as a wireless deauther unit.</li>
+              <li>Evaluated impact of beacon frame spoofing (creating multiple ghost networks) and probe request floods.</li>
+              <li>Analyzed 802.11w Protected Management Frames (PMF) standard as a cryptographic mitigation control.</li>
+            </ul>
+
+            <h4 style="font-size: 0.9rem; color: var(--text-main); margin-top: 10px;">Tech Stack:</h4>
+            <ul class="tag-list">
+              <li>IEEE 802.11 Standard</li>
+              <li>NodeMCU ESP8266</li>
+              <li>C++</li>
+              <li>Wireless Frame Injection</li>
+              <li>Wi-Fi Sniffing</li>
+              <li>Radio Tap Header Parsing</li>
+            </ul>
           </article>
         </section>
       </main>
 
       <footer class="site-footer">
-        <nav aria-label="Footer">
+        <p>&copy; 2026 Kevin Dsouza</p>
+        <nav aria-label="Footer Navigation">
           <a href="mailto:kevin.dsouza.cyber@gmail.com">Email</a>
-          <a href="https://www.linkedin.com/in/kevin-dsouza-1906">LinkedIn</a>
-          <a href="assets/files/kevin-dsouza-resume.pdf">Resume</a>
+          <a href="https://www.linkedin.com/in/kevin-dsouza-1906" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="assets/files/kevin-dsouza-resume.pdf" target="_blank">Resume</a>
         </nav>
       </footer>
     </div>
