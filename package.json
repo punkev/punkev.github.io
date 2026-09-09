@@ -1,0 +1,11 @@
+{
+  "name": "kevin-dsouza-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node tooling/build.mjs",
+    "dev": "node tooling/serve.mjs",
+    "check": "node tooling/check.mjs"
+  }
+}

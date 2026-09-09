@@ -32,7 +32,14 @@ kramdown:
       disable : true
 exclude: [
    /*/*/_problems/*,
-   scripts
+   scripts,
+   src,
+   tooling,
+   node_modules,
+   dist,
+   package.json,
+   .openai,
+   .preview
 ]
 plugins:
    - jekyll-seo-tag

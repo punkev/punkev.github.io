@@ -7,3 +7,6 @@ Gemfile.lock
 .jekyll-cache/*
 /scripts/templates/__pycache__
 /scripts/templates/__pycache__/*
+node_modules/
+dist/
+.preview/

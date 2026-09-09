@@ -1,26 +1,51 @@
-# Usage
+# Kevin Dsouza | Application Security Portfolio
 
-To use the Hacker Plus theme:
+A responsive, static web application with Home, About, Experience, Projects, and Blogs. The site uses native HTML, CSS, and JavaScript, with a small Node.js generator to keep content and shared layouts consistent. There are no production dependencies, trackers, or remote font requests.
 
-*(Assuming that you have VS Code and python already installed)*
+## Run locally
 
-1. Click on 'Use this template'. Then fill in the asked details. This repo contains the basic structure, useful snippets for markdown in VS Code and a Gemfile in case you want to build and test the site locally
-2. Enable GitHub Pages in your repository
-3. Clone the repo locally
-4. **[IMPORTANT\*] Run `git submodule add https://github.com/CaptainIRS/hacker-plus-scripts scripts` to get the required python scripts**
-4. Fill in in the desired fields the `_config.yml` file and push the commits to have a working site
-5. To get started, follow the instructions below(in VS Code):
+Requires Node.js 20 or newer. No dependency installation is needed.
 
-\* => *GitHub for some reason removes the submodule link when you use the template (Possibly a bug)*
+```sh
+node tooling/build.mjs
+node tooling/serve.mjs
+```
 
-Writing CTF Writeups:
+The server prints its local URL and selects the next port if 4173 is occupied. The generated root `index.html` also works directly in a browser.
 
-1. Open a new terminal window in VS Code and run `cd scripts`
-2. Run `python writeup_gen.py` and fill in the details. The script would generate the required writeup files and asset directory for the CTF and open the required files in VS Code for editing
-3. Write the writeups in markdown and push the commits to your repo
+## Edit the portfolio
 
-Writing Codechef Problem Solutions:
+- `src/content.mjs`: resume-backed experience, skills, certifications, projects, and planned writing.
+- `src/render.mjs`: page templates and shared navigation/footer.
+- `assets/css/site.css`: responsive layout and design tokens.
+- `assets/js/app.js`: career tabs, mobile navigation, project deep links, and the portfolio terminal.
+- `assets/files/`: downloadable resume and the original research reports.
 
-1. Open a new terminal window in VS Code and run `cd scripts`
-2. Run `python codechef_gen.py` and fill in the details. The script would generate the required solution files and open them in VS Code for editing
-3. Write the solutions in markdown and push the commits to your repo
+Run `node tooling/build.mjs` after changes. It updates the root HTML for the existing GitHub Pages setup and writes a deployable copy to `dist/`. `background.html` remains available as an experience-page alias. The build only copies site assets and generated pages into `dist/`.
+
+The career timeline supports keyboard navigation and direct role links, with a full readable history when JavaScript is disabled. Project details use native disclosure controls. Terminal input is rendered as plain text. Layouts support mobile devices and reduced-motion preferences.
+
+## Validate
+
+```sh
+node tooling/check.mjs
+```
+
+The check uses Node.js and Python 3's standard library. Set `PYTHON` to a Python executable if it is not on PATH. It verifies JavaScript syntax, every local link and anchor, asset availability, document landmarks, career-panel relationships, and key resume facts. No automated browser testing is included.
+
+## Content notes
+
+The supplied September 2026 CV is the source of truth. Citi's VP role starts in May 2026; the preceding AVP role runs from February 2023 to May 2026. The Northeastern ITS capstone is volunteer research, not employment. Security+ and CEH are labeled expired. Blog topics remain planned articles. Professional tools without a public repository are labeled accordingly.
+
+The downloadable PDF was regenerated from the supplied CV. To regenerate it from a future Markdown CV, use Python with ReportLab:
+
+```sh
+python tooling/resume.py path/to/updated-cv.md assets/files/kevin-dsouza-resume.pdf
+node tooling/build.mjs
+```
+
+## Assets and hosting
+
+Icons are vendored from Lucide (`assets/icons/LICENSE`). DM Sans is self-hosted under the SIL Open Font License (`assets/fonts/OFL.txt`). Research thumbnails are rendered from the existing reports.
+
+The repository remains compatible with GitHub Pages. Sites uses `.openai/hosting.json` and the static `dist/` output for a separate private review deployment. Publishing to GitHub Pages requires a separate push to the GitHub remote.
