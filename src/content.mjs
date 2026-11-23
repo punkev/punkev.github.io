@@ -231,8 +231,8 @@ export const experience = [
     short: "Scoutflo",
     role: "Security Intern",
     level: "Infrastructure Security",
-    date: "Jun 2019 - Apr 2020",
-    year: "2019",
+    date: "Jun 2018 - Apr 2020",
+    year: "2018",
     location: "Thane, India",
     type: "Professional",
     intro:
