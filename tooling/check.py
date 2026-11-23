@@ -59,7 +59,7 @@ for name, page in pages.items():
             assert parsed.fragment in pages[target.name].ids, f'{name}: missing anchor: {ref}'
         checked += 1
     if page.tabs:
-        assert len(page.tabs) == len(page.panels) == 10, f'{name}: missing experience roles'
+        assert len(page.tabs) == len(page.panels) == 7, f'{name}: missing experience roles'
         for tab, panel in zip(page.tabs, page.panels):
             assert tab['href'] == '#' + panel['id']
             assert panel['aria-labelledby'] == tab['id']
@@ -68,4 +68,4 @@ css = (ROOT / 'assets/css/site.css').read_text(encoding='utf-8')
 for relative in re.findall(r'url\([\'"]?([^\)\'\"]+)', css):
     assert (ROOT / 'assets/css' / relative).resolve().is_file(), f'Missing CSS asset: {relative}'
 
-print(f'PASS: {len(pages)} pages, {checked} local links/assets, all anchors, image labels, navigation, and 10 career panels.')
+print(f'PASS: {len(pages)} pages, {checked} local links/assets, all anchors, image labels, navigation, and 7 career panels.')

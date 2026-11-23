@@ -154,11 +154,11 @@
     about:
       "Kevin Dsouza\nApplication Security Engineer / Vice President at Citi\nSecure code review, API security, manual penetration testing, and DevSecOps.",
     skills:
-      "Core: Threat modeling, secure code review, web/API testing, risk-based prioritization\nTools: Burp Suite, Semgrep, Checkmarx, Snyk, Qualys, Jenkins\nCode: Java / Spring, Python, Node.js, Bash / PowerShell\nCredentials: GWEB / GWAPT",
+      "Core: Threat modeling, secure code review, web/API testing, risk-based prioritization\nAI: AI code-security evaluation, LLM application security, prompt injection\nTools: Burp Suite, Semgrep, Checkmarx, Snyk, Jenkins\nCode: Java / Spring, Python, Node.js, Bash / PowerShell\nCredentials: GAIPS / GWEB / GWAPT\nGAIPS badge: https://www.credly.com/badges/3f108892-73cf-44f4-a2f4-f4421c11cd26",
     projects:
-      "SAGE / Open-source security scanner / TCP covert channel / 802.11 research / Burp Suite tooling / Security pipelines / Job portal",
+      "SAGE / Open-source security scanner / Security pipelines / Burp Suite tooling / TCP covert channel / 802.11 research / Job portal",
     experience:
-      "Citi: Lead Analyst / VP (May 2026 - Present)\nCiti: Senior Analyst / AVP (Feb 2023 - May 2026)\nNetBrain: Application Security Engineer Co-op (2022)\nNortheastern: Security research and graduate teaching (2021 - 2022)",
+      "Citi: Lead Analyst / VP (May 2026 - Present)\nCiti: Senior Analyst / AVP (Feb 2023 - May 2026)\nNetBrain: Application Security Engineer Co-op (Jan - Aug 2022)\nNortheastern: Security research capstone (Sep - Dec 2022)\nNortheastern: Graduate teaching (Jun 2021 - Dec 2022)",
   };
   const destinations = {
     about: ["about.html", "Read my introduction"],

@@ -6,6 +6,16 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("../fonts/ibm-plex-mono-latin.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
 :root {
   --bg: #101312;
   --surface: #171b19;
@@ -19,7 +29,7 @@
   --rose: #dfb0b3;
   --amber: #dbc293;
   --font: "DM Sans", "Segoe UI", sans-serif;
-  --mono: "Cascadia Code", Consolas, monospace;
+  --mono: "IBM Plex Mono", Consolas, monospace;
 }
 * {
   box-sizing: border-box;
@@ -247,11 +257,12 @@ img {
 .text-link {
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  justify-content: flex-start;
+  gap: 8px;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.6;
+  color: var(--text);
 }
 .text-link:hover,
 .email-link:hover {
@@ -377,6 +388,7 @@ img {
   font-size: 14px;
   margin-top: 15px;
   line-height: 1.8;
+  color: var(--text);
 }
 .profile-divider {
   height: 1px;
@@ -386,20 +398,24 @@ img {
 .credential-inline {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 9px;
   font-size: 13px;
   margin-bottom: 15px;
 }
-.credential-inline > .mono {
-  margin-left: auto;
+.credential-inline a {
+  color: var(--text);
+}
+.credential-inline a:hover {
+  color: var(--accent);
 }
 .credential-inline > .icon {
   width: 17px;
   height: 17px;
-  color: var(--accent);
+  color: var(--muted);
 }
 .hero-profile .text-link {
-  width: 100%;
+  width: auto;
 }
 .hero-bottom {
   padding: 16px 0;
@@ -445,36 +461,17 @@ img {
   justify-content: space-between;
   gap: 30px;
 }
-.trust-inner > .eyebrow {
-  max-width: 120px;
+.trust-label {
+  flex: none;
+  white-space: nowrap;
+  letter-spacing: 0.04em;
 }
 .wordmark {
-  font-size: 27px;
-  font-weight: 600;
-  color: #c7cec7;
-  line-height: 1.1;
-}
-.citi-wordmark {
-  font-size: 40px;
-  font-weight: 650;
-}
-.northeastern-wordmark {
-  font-family: Georgia, serif;
-  font-size: 24px;
-}
-.northeastern-wordmark span {
-  display: block;
-  font-size: 15px;
-  margin-top: 2px;
-}
-.tcs-wordmark {
-  font-size: 35px;
-}
-.tcs-wordmark span {
-  display: block;
-  font-size: 12px;
-  font-weight: 400;
-  margin-top: 3px;
+  font-size: 22px;
+  font-weight: 500;
+  color: #d5dbd4;
+  line-height: 1;
+  white-space: nowrap;
 }
 .section {
   padding-block: 80px;
@@ -568,16 +565,29 @@ img {
   color: #e3d3a9;
 }
 .report-visual {
-  padding: 20px 27px 44px;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #101412;
+}
+.report-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgb(16 19 18 / 55%),
+    rgb(16 19 18 / 82%)
+  );
+  pointer-events: none;
 }
 .report-visual img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  filter: drop-shadow(0 4px 8px rgb(0 0 0 / 18%));
+  object-fit: cover;
+  object-position: center 22%;
+  filter: grayscale(0.35) saturate(0.4) brightness(0.28) contrast(1.1);
   transition: transform 0.3s;
 }
 .project-card:hover .report-visual img {
@@ -587,11 +597,13 @@ img {
   font-family: var(--mono);
   font-size: 12px;
   position: absolute;
+  z-index: 1;
   bottom: 12px;
   left: 24px;
   display: flex;
   gap: 6px;
   align-items: center;
+  color: var(--text);
 }
 .visual-caption .icon {
   width: 13px;
@@ -720,7 +732,7 @@ img {
   line-height: 1.7;
 }
 .approach-list li > .icon {
-  color: var(--accent);
+  color: var(--subtle);
   margin-left: auto;
   margin-top: 3px;
 }
@@ -754,6 +766,40 @@ img {
 }
 .writing-preview .draft-label {
   margin-top: 20px;
+}
+.report-preview {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+.report-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+  padding: 24px;
+}
+.report-card h3 {
+  font-size: 22px;
+  line-height: 1.35;
+  margin: 14px 0 12px;
+}
+.report-card p {
+  font-size: 15px;
+  line-height: 1.7;
+  flex: 1;
+}
+.report-card .report-link {
+  margin-top: 22px;
+}
+.hero-focus {
+  display: inline-block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 13px;
 }
 .site-footer {
   border-top: 1px solid var(--line);
@@ -877,15 +923,29 @@ img {
   display: block;
   margin-top: 8px;
 }
+.about-facts .cert-codes {
+  font-size: 26px;
+  white-space: nowrap;
+}
+.about-facts .cert-sep {
+  display: inline;
+  margin: 0 0.28em;
+  color: var(--subtle);
+  font-style: normal;
+}
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 60px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  column-gap: 40px;
   row-gap: 35px;
 }
 .skill-group {
+  grid-column: span 2;
   padding-top: 28px;
   border-top: 1px solid var(--line);
+}
+.skill-group:nth-child(n + 4) {
+  grid-column: span 3;
 }
 .skill-title {
   display: flex;
@@ -965,9 +1025,34 @@ img {
   font-size: 17px;
   line-height: 1.5;
 }
+.cert-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.cert-link:hover {
+  color: var(--accent);
+}
+.cert-link .icon {
+  width: 14px;
+  height: 14px;
+  flex: none;
+}
 .certification p {
   font-size: 13px;
   margin-top: 3px;
+}
+.earlier-credentials {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 18px;
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.earlier-credentials .eyebrow {
+  color: var(--subtle);
 }
 .cert-status {
   font-size: 12px;
@@ -1145,6 +1230,10 @@ img {
   color: var(--text);
   font-weight: 650;
 }
+.neu-symbol {
+  font-size: 16px;
+  letter-spacing: 0.04em;
+}
 .role-heading .eyebrow {
   margin-bottom: 9px;
   display: flex;
@@ -1202,6 +1291,39 @@ img {
   border-left: 2px solid var(--amber);
   margin: -8px 0 28px;
 }
+.role-positions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.role-position {
+  padding-top: 20px;
+  margin-top: 8px;
+  border-top: 1px solid var(--line);
+}
+.role-position-heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 6px 18px;
+}
+.role-position-heading h3 {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.45;
+  max-width: 520px;
+}
+.role-position-heading span {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+.role-position .contribution-list {
+  margin-top: 14px;
+  gap: 12px;
+}
 .contribution-list {
   list-style: none;
   padding: 0;
@@ -1215,12 +1337,12 @@ img {
   gap: 12px;
   font-size: 16px;
   line-height: 1.75;
-  color: #b9c4bc;
+  color: var(--text);
 }
 .contribution-list .icon {
   width: 15px;
   height: 15px;
-  color: var(--accent);
+  color: #8ea898;
   margin-top: 6px;
 }
 .role-focus {
@@ -1232,6 +1354,12 @@ img {
   margin-top: 12px;
 }
 .role-panel > .text-link {
+  margin-top: 24px;
+}
+.role-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 28px;
   margin-top: 24px;
 }
 .career-pagination {
@@ -1265,6 +1393,9 @@ img {
 }
 .projects-section {
   padding-bottom: 80px;
+}
+.earlier-work {
+  padding-top: 10px;
 }
 .collection-heading {
   display: flex;
@@ -1314,7 +1445,7 @@ img {
   margin-bottom: 26px;
 }
 .projects-grid .report-visual {
-  padding: 22px 35px 44px;
+  padding: 0;
 }
 .project-details {
   border-top: 1px solid var(--line);
@@ -1378,10 +1509,11 @@ img {
   margin-top: 4px;
 }
 .report-link {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  color: var(--accent);
+  justify-content: flex-start;
+  gap: 8px;
+  color: var(--text);
   border-top: 1px solid var(--line);
   padding-top: 17px;
   margin-top: 17px;
@@ -1392,7 +1524,7 @@ img {
   height: 16px;
 }
 .report-link:hover {
-  color: var(--text);
+  color: var(--accent);
 }
 .blog-layout {
   display: grid;
@@ -1688,8 +1820,8 @@ img {
   .trust-inner {
     gap: 20px;
   }
-  .tcs-wordmark span {
-    max-width: 120px;
+  .wordmark {
+    font-size: 18px;
   }
   .code-line {
     white-space: normal;
@@ -1806,17 +1938,19 @@ img {
   .profile-divider {
     display: none;
   }
+  .credential-inline,
+  .hero-profile > .text-link {
+    grid-column: 1 / -1;
+  }
   .credential-inline {
     margin: 7px 0 0;
     font-size: 12px;
     gap: 6px;
-  }
-  .credential-inline > .mono {
-    display: none;
+    flex-wrap: nowrap;
   }
   .hero-profile > .text-link {
     font-size: 14px;
-    margin-top: 7px;
+    margin-top: 0;
   }
   .hero-bottom {
     padding: 10px 0;
@@ -1840,26 +1974,9 @@ img {
   }
   .trust-inner > .eyebrow {
     flex-basis: 100%;
-    max-width: 100%;
   }
   .wordmark {
-    font-size: 21px;
-  }
-  .citi-wordmark {
-    font-size: 31px;
-  }
-  .northeastern-wordmark {
-    font-size: 20px;
-  }
-  .northeastern-wordmark span {
-    font-size: 14px;
-  }
-  .tcs-wordmark {
-    font-size: 29px;
-  }
-  .tcs-wordmark span {
-    font-size: 12px;
-    max-width: 95px;
+    font-size: 18px;
   }
   .section {
     padding-block: 52px;
@@ -1906,7 +2023,7 @@ img {
     font-size: 23px;
   }
   .report-visual {
-    padding: 20px 14px 46px;
+    padding: 0;
   }
   .visual-caption {
     left: 14px;
@@ -1996,8 +2113,14 @@ img {
     border-left: 0;
     border-top: 1px solid var(--line);
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 28px;
+  }
+  .about-facts > div:last-child {
+    grid-column: 1 / -1;
+  }
+  .about-facts .cert-codes {
+    font-size: 22px;
   }
   .about-facts > div {
     border: 0;
@@ -2013,8 +2136,16 @@ img {
     font-size: 14px;
   }
   .skills-grid {
+    grid-template-columns: 1fr 1fr;
     column-gap: 30px;
     row-gap: 30px;
+  }
+  .skill-group,
+  .skill-group:nth-child(n + 4) {
+    grid-column: auto;
+  }
+  .skill-group:last-child {
+    grid-column: 1 / -1;
   }
   .skill-title {
     gap: 10px;
@@ -2157,7 +2288,7 @@ img {
     font-size: 12px;
   }
   .projects-grid .report-visual {
-    padding: 20px 20px 46px;
+    padding: 0;
   }
   .collection-heading h2 {
     font-size: 16px;
@@ -2282,22 +2413,7 @@ img {
     grid-column: 1/-1;
   }
   .wordmark {
-    font-size: 25px;
-  }
-  .citi-wordmark {
-    font-size: 33px;
-  }
-  .northeastern-wordmark {
-    font-size: 21px;
-  }
-  .northeastern-wordmark span {
-    font-size: 14px;
-  }
-  .tcs-wordmark {
-    font-size: 29px;
-  }
-  .tcs-wordmark span {
-    max-width: none;
+    font-size: 17px;
   }
   .section-heading {
     display: block;
@@ -2335,12 +2451,13 @@ img {
     font-size: 25px;
   }
   .featured-card .report-visual {
-    padding: 22px 25px 44px;
+    padding: 0;
   }
   .visual-caption {
     left: 24px;
   }
-  .writing-preview {
+  .writing-preview,
+  .report-preview {
     grid-template-columns: 1fr;
     gap: 27px;
   }
@@ -2372,6 +2489,11 @@ img {
   }
   .skills-grid {
     grid-template-columns: 1fr;
+  }
+  .skill-group,
+  .skill-group:nth-child(n + 4),
+  .skill-group:last-child {
+    grid-column: auto;
   }
   .about-facts {
     gap: 15px;
@@ -2510,9 +2632,6 @@ img {
   }
   .hero-profile > .text-link {
     margin-top: 0;
-  }
-  .hero-profile .credential-inline {
-    display: none;
   }
   .email-link {
     font-size: 12px;

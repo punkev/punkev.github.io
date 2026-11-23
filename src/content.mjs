@@ -22,6 +22,18 @@ export const skills = [
     ],
   },
   {
+    title: "AI security",
+    icon: "scan-line",
+    description: "Judge the tool before you trust the finding.",
+    items: [
+      "AI code-security evaluation",
+      "LLM application security",
+      "Prompt injection",
+      "OWASP LLM risks",
+      "Finding-to-CWE mapping",
+    ],
+  },
+  {
     title: "Secure delivery",
     icon: "workflow",
     description: "Make security part of how software gets built.",
@@ -44,13 +56,9 @@ export const skills = [
       "Semgrep",
       "Checkmarx",
       "Snyk",
-      "HCL AppScan",
+      "Jenkins",
       "Qualys",
       "SonarQube",
-      "Mend",
-      "Jenkins",
-      "Postman",
-      "WAF",
     ],
   },
   {
@@ -60,7 +68,6 @@ export const skills = [
     items: [
       "Java",
       "Spring",
-      "Struts",
       "Python",
       "Node.js",
       "Bash / PowerShell",
@@ -88,13 +95,12 @@ export const experience = [
     type: "Professional",
     current: true,
     intro:
-      "Leading application security across business-critical enterprise systems.",
+      "Setting how enterprise application security is governed, including which AI security tools are worth trusting.",
     highlights: [
-      "Drive secure SDLC adoption, vulnerability governance, and proactive risk reduction across enterprise applications.",
-      "Partner with architects, product owners, and engineers to validate and remediate weaknesses in web applications, APIs, and backend services.",
-      "Translate SAST, DAST, SCA, and penetration-testing findings into actionable, risk-based remediation guidance.",
-      "Evaluate AI-driven code security tools against known vulnerabilities, assessing detection accuracy, false positives, exploitability reasoning, and coverage.",
-      "Map AI-generated findings to OWASP Top 10, API security risks, and CWE classifications to assess practical secure SDLC applicability.",
+      "Lead secure SDLC adoption and vulnerability governance for business-critical systems, so risk reduction is part of how software ships.",
+      "Set remediation priority with architects, product owners, and engineers so the highest-risk weaknesses in web applications, APIs, and backend services are fixed first.",
+      "Evaluate AI-driven code security tools against known vulnerabilities, judging detection accuracy, false positives, exploitability reasoning, and coverage before they are trusted.",
+      "Map AI findings to OWASP Top 10, API security risks, and CWE, so a tool suggestion is acted on only when it describes a real weakness.",
     ],
     tags: [
       "Application security",
@@ -117,11 +123,10 @@ export const experience = [
       "Deep technical assessments, from source code to reproducible attack chains.",
     highlights: [
       "Reviewed Java/Spring services and APIs for authorization flaws, injection, deserialization, business logic issues, and misuse of security controls.",
-      "Performed white-box testing across web, mobile, and API services, investigating SSRF, privilege escalation, authentication bypasses, and race conditions.",
-      "Authored assessment reports with reproducible proofs of concept and developer-focused remediation guidance.",
-      "Correlated scanner findings with code paths and API behavior, prioritizing exploitability, exposure, and data sensitivity.",
-      "Led threat modeling and secure design reviews for applications, APIs, and authentication workflows.",
-      "Built custom Burp Suite tooling and SAGE, a GitHub-based search automation tool for vulnerable code patterns and recurring security anti-patterns.",
+      "White-box tested web, mobile, and API services for SSRF, privilege escalation, authentication bypasses, and race conditions, and wrote the proof of concept that made each finding reproducible.",
+      "Correlated SAST and DAST results with the code path so engineers fixed exploitable issues instead of chasing scanner severity.",
+      "Led threat modeling and secure design reviews for applications, APIs, and authentication workflows before weak designs shipped.",
+      "Built SAGE and custom Burp tooling so a vulnerable pattern found once could be searched for again, instead of returning in the next review.",
     ],
     tags: [
       "Java / Spring",
@@ -130,6 +135,29 @@ export const experience = [
       "Threat modeling",
       "SAGE",
     ],
+    projects: ["sage", "burp-tooling"],
+  },
+  {
+    id: "netbrain",
+    company: "NetBrain Technologies",
+    short: "NetBrain",
+    role: "Application Security Engineer Co-op",
+    level: "Application Security",
+    date: "Jan - Aug 2022",
+    year: "2022",
+    location: "Burlington, MA",
+    type: "Professional",
+    intro:
+      "Bringing hands-on testing and continuous security validation into software delivery.",
+    highlights: [
+      "Tested web applications and APIs with Burp Suite and Postman, focusing on authentication, input validation, and business logic.",
+      "Triaged SonarQube, Snyk, Qualys, and Mend findings, identifying exploitable vulnerabilities and vulnerable third-party components.",
+      "Integrated SAST, DAST, and SCA into Jenkins pipelines, including automated Qualys scanning.",
+      "Automated Linux and Windows test environments using Jenkins, PowerShell, and VMware Horizon.",
+      "Configured reverse proxies and documented assessment reports, remediation, policies, and security workflows in Confluence.",
+    ],
+    tags: ["Jenkins", "Burp Suite", "SAST / DAST / SCA", "PowerShell"],
+    project: "security-pipelines",
   },
   {
     id: "neu-research",
@@ -152,97 +180,50 @@ export const experience = [
     project: "scanner",
   },
   {
-    id: "neu-ta-5001",
+    id: "neu-ta",
     company: "Northeastern University",
     short: "Northeastern",
     role: "Graduate Teaching Assistant",
-    level: "CY 5001: Cybersecurity Technologies, Threats, and Defense",
-    date: "Sep - Dec 2022",
-    year: "2022",
-    location: "Boston, MA",
-    type: "Research & teaching",
-    intro:
-      "Helping more than 60 students connect cybersecurity fundamentals to practical work.",
-    highlights: [
-      "Assisted Professor Sakib Miazi with teaching networks, operating systems, server architectures, and scripting.",
-      "Mentored students in network security, system hardening, and threat identification.",
-      "Collaborated on labs covering virtualization, containerization, and cloud security fundamentals.",
-    ],
-    tags: ["Mentorship", "Network security", "Cloud fundamentals"],
-  },
-  {
-    id: "netbrain",
-    company: "NetBrain Technologies",
-    short: "NetBrain",
-    role: "Application Security Engineer Co-op",
-    level: "Application Security",
-    date: "Jan - Aug 2022",
-    year: "2022",
-    location: "Burlington, MA",
-    type: "Professional",
-    intro:
-      "Bringing hands-on testing and continuous security validation into software delivery.",
-    highlights: [
-      "Tested web applications and APIs with Burp Suite and Postman, focusing on authentication, input validation, and business logic.",
-      "Triaged SonarQube, Snyk, Qualys, and Mend findings, identifying exploitable vulnerabilities and vulnerable third-party components.",
-      "Integrated SAST, DAST, and SCA into Jenkins pipelines, including automated Qualys scanning.",
-      "Automated Linux and Windows test environments using Jenkins, PowerShell, and VMware Horizon.",
-      "Configured reverse proxies and documented assessment reports, remediation, policies, and security workflows in Confluence.",
-    ],
-    tags: ["Jenkins", "Burp Suite", "SAST / DAST / SCA", "PowerShell"],
-  },
-  {
-    id: "neu-ta-5150",
-    company: "Northeastern University",
-    short: "Northeastern",
-    role: "Graduate Teaching Assistant",
-    level: "CY 5150: Network Security Practices",
-    date: "Sep - Dec 2021",
-    year: "2021",
-    location: "Boston, MA",
-    type: "Research & teaching",
-    intro: "Turning network defense theory into hands-on laboratory practice.",
-    highlights: [
-      "Supported teaching on firewalls, VPNs, wireless security, malware, and Internet security principles.",
-      "Guided students through secure configurations, threat analysis, and defensive technologies in controlled labs.",
-    ],
-    tags: ["Network defense", "Firewalls / VPNs", "Hands-on labs"],
-  },
-  {
-    id: "neu-ta-5010",
-    company: "Northeastern University",
-    short: "Northeastern",
-    role: "Graduate Teaching Assistant",
-    level: "CY 5010: Cybersecurity Principles and Practices",
-    date: "Jun - Aug 2021",
+    level: "Khoury College of Computer Sciences",
+    date: "Jun 2021 - Dec 2022",
     year: "2021",
     location: "Boston, MA",
     type: "Research & teaching",
     intro:
-      "Building a foundation in information security principles and practice.",
-    highlights: [
-      "Taught and reinforced confidentiality, integrity, and availability through foundational cybersecurity coursework.",
-      "Guided lab work in security controls, risk management, and incident response; evaluated assignments against security practices and governance frameworks.",
+      "Three teaching appointments connecting cybersecurity fundamentals to hands-on practice.",
+    positions: [
+      {
+        title: "CY 5001: Cybersecurity Technologies, Threats, and Defense",
+        date: "Sep - Dec 2022",
+        highlights: [
+          "Assisted Professor Sakib Miazi with teaching networks, operating systems, server architectures, and scripting for a class of 60+ students.",
+          "Mentored students in network security, system hardening, and threat identification.",
+          "Collaborated on labs covering virtualization, containerization, and cloud security fundamentals.",
+        ],
+      },
+      {
+        title: "CY 5150: Network Security Practices",
+        date: "Sep - Dec 2021",
+        highlights: [
+          "Supported teaching on firewalls, VPNs, wireless security, malware, and Internet security principles.",
+          "Guided students through secure configurations, threat analysis, and defensive technologies in controlled labs.",
+        ],
+      },
+      {
+        title: "CY 5010: Cybersecurity Principles and Practices",
+        date: "Jun - Aug 2021",
+        highlights: [
+          "Taught and reinforced confidentiality, integrity, and availability through foundational cybersecurity coursework.",
+          "Guided lab work in security controls, risk management, and incident response; evaluated assignments against security practices and governance frameworks.",
+        ],
+      },
     ],
-    tags: ["Security principles", "Risk management", "Incident response"],
-  },
-  {
-    id: "azure-skynet",
-    company: "Azure Skynet Solutions",
-    short: "Azure Skynet",
-    role: "Cybersecurity Intern",
-    level: "Security Testing",
-    date: "May 2020",
-    year: "2020",
-    location: "Gurugram, India",
-    type: "Professional",
-    intro:
-      "Practical exposure to vulnerability assessment and offensive security fundamentals.",
-    highlights: [
-      "Completed an internship focused on security operations and foundational offensive security concepts.",
-      "Applied vulnerability assessment methodologies to identify and analyze common application and system security issues.",
+    tags: [
+      "Mentorship",
+      "Network security",
+      "Risk management",
+      "Hands-on labs",
     ],
-    tags: ["Vulnerability assessment", "Security operations"],
   },
   {
     id: "scoutflo",
@@ -303,6 +284,13 @@ export const education = [
 
 export const certifications = [
   {
+    code: "GAIPS",
+    name: "GIAC AI Platform Security",
+    date: "November 2026",
+    expired: false,
+    url: "https://www.credly.com/badges/3f108892-73cf-44f4-a2f4-f4421c11cd26",
+  },
+  {
     code: "GWEB",
     name: "GIAC Certified Web Application Defender",
     date: "August 2025",
@@ -343,9 +331,9 @@ export const projects = [
     overview:
       "A GitHub-based security search automation tool developed during my work at Citi. SAGE identifies vulnerable code patterns and recurring security anti-patterns across repositories to accelerate triage and support early remediation.",
     points: [
-      "Automates repository searches for vulnerable code patterns.",
-      "Surfaces recurring security anti-patterns for investigation.",
-      "Supports earlier triage and remediation across codebases.",
+      "Turns a review idea, such as a missing authorization check or an unsafe deserialization sink, into a repeatable search across repositories.",
+      "Groups matches so the same weakness can be triaged once instead of repo by repo.",
+      "Gives reviewers a head start before that pattern shows up again in a penetration test.",
     ],
     tags: ["GitHub", "Code review", "Security automation"],
     availability: "Professional work; source code is not published.",
@@ -373,8 +361,50 @@ export const projects = [
     tags: ["Python", "Jenkins", "OWASP ZAP", "Docker", "Nikto", "testssl.sh"],
   },
   {
-    id: "covert-channel",
+    id: "security-pipelines",
     number: "03",
+    name: "Security in the pipeline",
+    subtitle: "Continuous security validation",
+    category: "Security engineering",
+    context: "Built at NetBrain",
+    icon: "workflow",
+    theme: "blue",
+    description:
+      "Connecting application releases to repeatable security checks.",
+    overview:
+      "Jenkins pipelines integrating static, dynamic, and software composition analysis into application releases, alongside repeatable Linux and Windows security test environments.",
+    points: [
+      "Runs SAST, DAST, and SCA in the Jenkins release path, including Qualys scans against the deployed application.",
+      "Rebuilds the same Linux and Windows test beds with Jenkins and PowerShell so a finding can be rechecked on the next build.",
+      "Attaches scanner output to the release and leaves the severity call with the engineer, not the tool.",
+    ],
+    tags: ["Jenkins", "Qualys", "Snyk", "Mend", "PowerShell"],
+    availability: "Professional work; source code is not published.",
+  },
+  {
+    id: "burp-tooling",
+    number: "04",
+    name: "Burp Suite custom tooling",
+    subtitle: "Assessment workflow automation",
+    category: "Security engineering",
+    context: "Built at Citi",
+    icon: "fingerprint",
+    theme: "mint",
+    description:
+      "Less repetitive testing. More time for the hard-to-find vulnerabilities.",
+    overview:
+      "Custom Burp Suite tooling and workflows developed to automate repetitive testing patterns and accelerate vulnerability discovery during application security assessments.",
+    points: [
+      "Replays authenticated API sequences so object-level authorization can be checked without rebuilding each request.",
+      "Keeps manual testing on the behavior scanners miss: session handling, business logic, and multi-step workflows.",
+      "Feeds what the proxy shows back into white-box review of the same endpoint.",
+    ],
+    tags: ["Burp Suite", "API security", "Penetration testing"],
+    availability: "Professional work; source code is not published.",
+  },
+  {
+    id: "covert-channel",
+    number: "05",
     name: "TCP covert channel",
     subtitle: "Network security research",
     category: "Research",
@@ -396,7 +426,7 @@ export const projects = [
   },
   {
     id: "wireless",
-    number: "04",
+    number: "06",
     name: "802.11 deauthentication",
     subtitle: "Wireless security research",
     category: "Research",
@@ -417,50 +447,9 @@ export const projects = [
     tags: ["IEEE 802.11", "ESP8266", "C++", "Wireless security"],
   },
   {
-    id: "burp-tooling",
-    number: "05",
-    name: "Burp Suite custom tooling",
-    subtitle: "Assessment workflow automation",
-    category: "Security engineering",
-    context: "Built at Citi",
-    icon: "fingerprint",
-    theme: "mint",
-    description:
-      "Less repetitive testing. More time for the hard-to-find vulnerabilities.",
-    overview:
-      "Custom Burp Suite tooling and workflows developed to automate repetitive testing patterns and accelerate vulnerability discovery during application security assessments.",
-    points: [
-      "Automates repeated testing patterns during manual assessments.",
-      "Supports efficient investigation of application and API behavior.",
-      "Complements white-box code review and penetration-testing workflows.",
-    ],
-    tags: ["Burp Suite", "API security", "Penetration testing"],
-    availability: "Professional work; source code is not published.",
-  },
-  {
-    id: "security-pipelines",
-    number: "06",
-    name: "Security in the pipeline",
-    subtitle: "Continuous security validation",
-    category: "Security engineering",
-    context: "Built at NetBrain",
-    icon: "workflow",
-    theme: "blue",
-    description:
-      "Connecting application releases to repeatable security checks.",
-    overview:
-      "Jenkins pipelines integrating static, dynamic, and software composition analysis into application releases, alongside repeatable Linux and Windows security test environments.",
-    points: [
-      "Integrates SAST, DAST, and SCA testing into Jenkins workflows.",
-      "Automates Qualys scanning across application deployments.",
-      "Provisions repeatable test environments with Jenkins and PowerShell.",
-    ],
-    tags: ["Jenkins", "Qualys", "Snyk", "Mend", "PowerShell"],
-    availability: "Professional work; source code is not published.",
-  },
-  {
     id: "job-portal",
-    number: "07",
+    number: "Earlier",
+    earlier: true,
     name: "Full-stack job portal",
     subtitle: "Web application development",
     category: "Development",
@@ -481,33 +470,4 @@ export const projects = [
   },
 ];
 
-export const posts = [
-  {
-    category: "AI & LLM security",
-    title: "LLM security risks: OWASP Top 10 for large language models",
-    description:
-      "Prompt injection, agentic workflows, and the boundaries that matter.",
-    status: "Planned",
-  },
-  {
-    category: "AI & LLM security",
-    title: "AI-assisted code audits",
-    description:
-      "Exploring AST-aware analysis and the role of AI in vulnerability triage.",
-    status: "Planned",
-  },
-  {
-    category: "Application security",
-    title: "Threat modeling API boundaries",
-    description:
-      "Authorization, object ownership, and the assumptions behind a REST endpoint.",
-    status: "Planned",
-  },
-  {
-    category: "Application security",
-    title: "Custom Semgrep rules for Java web applications",
-    description:
-      "Investigating deserialization risks and making static analysis more precise.",
-    status: "Planned",
-  },
-];
+export const posts = [];
