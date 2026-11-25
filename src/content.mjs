@@ -84,51 +84,46 @@ export const skills = [
 
 export const experience = [
   {
-    id: "citi-vp",
+    id: "citi",
     company: "Citibank",
     short: "Citi",
-    role: "Information Tech Lead Analyst",
+    role: "Application Security",
     level: "Vice President",
-    date: "May 2026 - Present",
-    year: "2026",
+    date: "Feb 2023 - Present",
+    year: "2023",
     location: "Fort Lauderdale, FL",
     type: "Professional",
     current: true,
     intro:
-      "Setting how enterprise application security is governed, including which AI security tools are worth trusting.",
-    highlights: [
-      "Lead secure SDLC adoption and vulnerability governance for business-critical systems, so risk reduction is part of how software ships.",
-      "Set remediation priority with architects, product owners, and engineers so the highest-risk weaknesses in web applications, APIs, and backend services are fixed first.",
-      "Evaluate AI-driven code security tools against known vulnerabilities, judging detection accuracy, false positives, exploitability reasoning, and coverage before they are trusted.",
-      "Map AI findings to OWASP Top 10, API security risks, and CWE, so a tool suggestion is acted on only when it describes a real weakness.",
+      "From hands-on assessments to how enterprise application security is governed, including which AI security tools are worth trusting.",
+    positions: [
+      {
+        title: "Vice President, Information Tech Lead Analyst",
+        date: "May 2026 - Present",
+        highlights: [
+          "Lead secure SDLC adoption and vulnerability governance for business-critical systems, so risk reduction is part of how software ships.",
+          "Set remediation priority with architects, product owners, and engineers so the highest-risk weaknesses in web applications, APIs, and backend services are fixed first.",
+          "Evaluate AI-driven code security tools against known vulnerabilities, judging detection accuracy, false positives, exploitability reasoning, and coverage before they are trusted.",
+          "Map AI findings to OWASP Top 10, API security risks, and CWE, so a tool suggestion is acted on only when it describes a real weakness.",
+        ],
+      },
+      {
+        title: "Assistant Vice President, Information Tech Senior Analyst",
+        date: "Feb 2023 - May 2026",
+        highlights: [
+          "Reviewed Java/Spring services and APIs for authorization flaws, injection, deserialization, business logic issues, and misuse of security controls.",
+          "White-box tested web, mobile, and API services for SSRF, privilege escalation, authentication bypasses, and race conditions, and wrote the proof of concept that made each finding reproducible.",
+          "Correlated SAST and DAST results with the code path so engineers fixed exploitable issues instead of chasing scanner severity.",
+          "Led threat modeling and secure design reviews for applications, APIs, and authentication workflows before weak designs shipped.",
+          "Built SAGE and custom Burp tooling so a vulnerable pattern found once could be searched for again, instead of returning in the next review.",
+        ],
+      },
     ],
     tags: [
       "Application security",
       "Secure SDLC",
       "Vulnerability governance",
       "AI security evaluation",
-    ],
-  },
-  {
-    id: "citi-avp",
-    company: "Citibank",
-    short: "Citi",
-    role: "Information Tech Senior Analyst",
-    level: "Assistant Vice President",
-    date: "Feb 2023 - May 2026",
-    year: "2023",
-    location: "Fort Lauderdale, FL",
-    type: "Professional",
-    intro:
-      "Deep technical assessments, from source code to reproducible attack chains.",
-    highlights: [
-      "Reviewed Java/Spring services and APIs for authorization flaws, injection, deserialization, business logic issues, and misuse of security controls.",
-      "White-box tested web, mobile, and API services for SSRF, privilege escalation, authentication bypasses, and race conditions, and wrote the proof of concept that made each finding reproducible.",
-      "Correlated SAST and DAST results with the code path so engineers fixed exploitable issues instead of chasing scanner severity.",
-      "Led threat modeling and secure design reviews for applications, APIs, and authentication workflows before weak designs shipped.",
-      "Built SAGE and custom Burp tooling so a vulnerable pattern found once could be searched for again, instead of returning in the next review.",
-    ],
-    tags: [
       "Java / Spring",
       "White-box testing",
       "Burp Suite",

@@ -158,7 +158,7 @@
     projects:
       "SAGE / Open-source security scanner / Security pipelines / Burp Suite tooling / TCP covert channel / 802.11 research / Job portal",
     experience:
-      "Citi: Lead Analyst / VP (May 2026 - Present)\nCiti: Senior Analyst / AVP (Feb 2023 - May 2026)\nNetBrain: Application Security Engineer Co-op (Jan - Aug 2022)\nNortheastern: Security research capstone (Sep - Dec 2022)\nNortheastern: Graduate teaching (Jun 2021 - Dec 2022)",
+      "Citi: VP and AVP (Feb 2023 - Present)\nNetBrain: Application Security Engineer Co-op (Jan - Aug 2022)\nNortheastern: Security research capstone (Sep - Dec 2022)\nNortheastern: Graduate teaching (Jun 2021 - Dec 2022)\nScoutflo: Security Intern (Jun 2018 - Apr 2020)",
   };
   const destinations = {
     about: ["about.html", "Read my introduction"],

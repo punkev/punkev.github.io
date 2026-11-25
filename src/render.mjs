@@ -41,7 +41,7 @@ const navItems = [
   ["about.html", "About"],
   ["experience.html", "Experience"],
   ["projects.html", "Projects"],
-  ["blogs.html", "Blogs"],
+  ...(posts.length ? [["blogs.html", "Blogs"]] : []),
 ];
 
 function header(page) {
@@ -75,13 +75,53 @@ function pageIntro(number, label, title, text, action = "") {
   return `<section class="page-intro wrap"><div><p class="eyebrow"><span>${number}</span> / ${label}</p><h1>${title}<span class="accent">.</span></h1><p class="page-description">${text}</p></div>${action}</section>`;
 }
 
+function codePanel(theme, iconName, caption, lines) {
+  return `<div class="project-visual code-visual ${theme}"><div class="code-caption">${icon(iconName)} ${caption}</div>${lines
+    .map(
+      ([key, value], index) =>
+        `<div class="code-line"><span>${String(index + 1).padStart(2, "0")}</span> <i>${key}</i>: ${value}</div>`,
+    )
+    .join("")}</div>`;
+}
+
 function projectVisual(p) {
+  if (p.id === "sage")
+    return codePanel("mint", "git-branch", "SAGE / SECURITY SEARCH", [
+      ["scope", "repositories"],
+      ["match", "vulnerable_patterns"],
+      ["review", "findings"],
+      ["action", "remediate"],
+    ]);
+  if (p.id === "scanner")
+    return codePanel("blue", "scan-line", "SCAN / PIPELINE", [
+      ["zap", "application"],
+      ["nikto", "server"],
+      ["tls", "testssl"],
+      ["report", "normalized"],
+    ]);
+  if (p.id === "security-pipelines")
+    return codePanel("blue", "workflow", "PIPELINE / RELEASE GATE", [
+      ["sast", "source"],
+      ["dast", "qualys"],
+      ["sca", "dependencies"],
+      ["gate", "engineer"],
+    ]);
+  if (p.id === "covert-channel")
+    return codePanel("rose", "network", "TCP / SOURCE PORT", [
+      ["field", "source port"],
+      ["payload", "encrypted"],
+      ["capture", "wireshark"],
+      ["detect", "snort"],
+    ]);
+  if (p.id === "wireless")
+    return codePanel("amber", "radio", "802.11 / FRAMES", [
+      ["deauth", "spoofed"],
+      ["beacon", "spoofed"],
+      ["probe", "flood"],
+      ["pmf", "802.11w"],
+    ]);
   if (p.image)
     return `<div class="project-visual report-visual ${p.theme}"><img src="assets/images/${p.image}" alt="Cover of the ${e(p.name)} report" width="1000" height="750" loading="lazy"><span class="visual-caption">${icon("file-text")} ORIGINAL RESEARCH</span></div>`;
-  if (p.id === "sage")
-    return `<div class="project-visual code-visual mint"><div class="code-caption">${icon("git-branch")} SAGE / SECURITY SEARCH</div><div class="code-line"><span>01</span> <i>scope</i>: repositories</div><div class="code-line"><span>02</span> <i>match</i>: vulnerable_patterns</div><div class="code-line"><span>03</span> <i>review</i>: findings</div><div class="code-line"><span>04</span> <i>action</i>: remediate</div></div>`;
-  if (p.id === "security-pipelines")
-    return `<div class="project-visual code-visual blue"><div class="code-caption">${icon("workflow")} PIPELINE / RELEASE GATE</div><div class="code-line"><span>01</span> <i>sast</i>: source</div><div class="code-line"><span>02</span> <i>dast</i>: qualys</div><div class="code-line"><span>03</span> <i>sca</i>: dependencies</div><div class="code-line"><span>04</span> <i>gate</i>: engineer</div></div>`;
   return `<div class="project-visual compact-visual ${p.theme}">${icon(p.icon)}<span>${e(p.subtitle)}</span></div>`;
 }
 
@@ -154,12 +194,15 @@ function certificationBand() {
 const mainProjects = () => projects.filter((p) => !p.earlier);
 
 function projectCard(p, compact = false) {
-  return `<article class="project-card ${compact ? "featured-card" : ""}" id="${p.id}">${projectVisual(p)}<div class="project-content"><div class="project-meta"><span>${e(p.category)}</span><span>${p.number}</span></div><h3>${e(p.name)}</h3><p>${e(p.description)}</p>${tagList(compact ? p.tags.slice(0, 3) : p.tags)}${compact ? link(`projects.html#${p.id}`, "Explore project") : `<details class="project-details"><summary>Project details ${icon("chevron-down")}</summary><div class="project-detail-body"><p class="eyebrow">${e(p.context)}</p><p>${e(p.overview)}</p><ul class="detail-list">${p.points.map((x) => `<li>${e(x)}</li>`).join("")}</ul>${p.availability ? `<p class="availability">${icon("lock-keyhole")}${e(p.availability)}</p>` : ""}</div></details>${p.report ? `<a class="report-link" href="assets/files/${p.report}" target="_blank" rel="noopener">Read the report ${icon("file-text")}</a>` : ""}`}</div></article>`;
+  const body = `<div class="project-content"><div class="project-meta"><span>${e(p.category)}</span><span>${p.number}</span></div><h3>${e(p.name)}</h3><p>${e(p.description)}</p>${compact ? `<div class="card-row">${tagList(p.tags.slice(0, 3))}${icon("arrow-right")}</div>` : `${tagList(p.tags)}<details class="project-details"><summary>Project details ${icon("chevron-down")}</summary><div class="project-detail-body"><p class="eyebrow">${e(p.context)}</p><p>${e(p.overview)}</p><ul class="detail-list">${p.points.map((x) => `<li>${e(x)}</li>`).join("")}</ul>${p.availability ? `<p class="availability">${icon("lock-keyhole")}${e(p.availability)}</p>` : ""}</div></details>${p.report ? `<a class="report-link" href="assets/files/${p.report}" target="_blank" rel="noopener">Read the report ${icon("file-text")}</a>` : ""}`}</div>`;
+  return compact
+    ? `<a class="project-card featured-card" href="projects.html#${p.id}">${projectVisual(p)}${body}</a>`
+    : `<article class="project-card" id="${p.id}">${projectVisual(p)}${body}</article>`;
 }
 
 export function home() {
-  return `<section class="home-hero wrap"><div class="hero-topline"><p class="eyebrow"><span class="accent">APPLICATION SECURITY ENGINEER</span></p><span class="location">${icon("map-pin")} South Florida, USA</span></div><h1>Kevin Dsouza<span class="accent">.</span></h1><div class="hero-body"><div class="hero-copy"><h2>Understand the code.<br>Secure what matters.</h2><p>I find the weaknesses behind the findings, validate real-world risk, and work with engineers to build more secure applications.</p><div class="hero-actions">${link("projects.html", "Explore my work", "button button-primary")}<a class="button button-secondary" href="assets/files/kevin-dsouza-resume.pdf" target="_blank" rel="noopener">${icon("download")} Resume</a></div></div><aside class="hero-profile" aria-label="Current role"><div class="current-label"><span class="status-dot"></span>CURRENTLY AT CITI</div><h3>Security at<br>enterprise scale.</h3><p>Information Tech Lead Analyst<br>Vice President<br><span class="hero-focus">Including AI platform security</span></p><div class="profile-divider"></div><div class="credential-inline">${icon("award")} <span>${credentialCodes()}</span><span class="mono muted">GIAC</span></div><a class="text-link" href="experience.html">My experience ${icon("arrow-right")}</a></aside></div><div class="hero-bottom"><span class="mono">CODE REVIEW <span>/</span> API SECURITY <span>/</span> DEVSECOPS</span><button class="terminal-launch" type="button" data-open-terminal>${icon("terminal")} Open terminal</button></div></section>
-  <section class="trust-band"><div class="wrap trust-inner"><span class="eyebrow trust-label">BUILT AT</span><span class="wordmark">Citi</span><span class="wordmark">NetBrain</span><span class="wordmark">Northeastern</span><span class="wordmark">TCS</span></div></section>
+  return `<section class="home-hero wrap"><div class="hero-topline"><p class="eyebrow"><span class="accent">APPLICATION SECURITY ENGINEER</span></p><span class="location">${icon("map-pin")} South Florida, USA</span></div><h1>Kevin Dsouza<span class="accent">.</span></h1><div class="hero-body"><div class="hero-copy"><h2>Understand the code.<br>Secure what matters.</h2><p>I find the weaknesses behind the findings, validate real-world risk, and work with engineers to build more secure applications.</p><div class="hero-actions">${link("projects.html", "Explore my work", "button button-primary")}<a class="button button-secondary" href="assets/files/kevin-dsouza-resume.pdf" target="_blank" rel="noopener">${icon("download")} Resume</a></div></div><aside class="hero-profile" aria-label="Current role"><div class="current-label"><span class="status-dot"></span>CURRENTLY AT CITI</div><p class="hero-role">Information Tech Lead Analyst<br>Vice President<br><span class="hero-focus">Including AI platform security</span></p><div class="profile-divider"></div><div class="credential-inline">${icon("award")} <span>${credentialCodes()}</span><span class="mono muted">GIAC</span></div><a class="text-link" href="experience.html">My experience ${icon("arrow-right")}</a></aside></div><div class="hero-bottom"><span class="mono">CODE REVIEW <span>/</span> API SECURITY <span>/</span> DEVSECOPS</span><button class="terminal-launch" type="button" data-open-terminal>${icon("terminal")} Open terminal</button></div></section>
+  <section class="trust-band"><div class="wrap trust-inner"><span class="eyebrow trust-label">BUILT AT</span><span class="wordmark"><span class="wordmark-name">Citi</span><span class="wordmark-role">Vice President</span></span><span class="wordmark"><span class="wordmark-name">NetBrain</span><span class="wordmark-role">Security co-op</span></span><span class="wordmark"><span class="wordmark-name">Northeastern</span><span class="wordmark-role">M.S. and teaching</span></span><span class="wordmark"><span class="wordmark-name">TCS</span><span class="wordmark-role">Intern</span></span></div></section>
   <section class="section wrap">${sectionHeader("01", "THE WORK", "Security, in practice.", link("projects.html", "All projects"))}<div class="featured-grid">${mainProjects()
     .slice(0, 3)
     .map((p) => projectCard(p, true))
@@ -207,8 +250,7 @@ function rolePanel(x) {
 
 export function career() {
   return `${pageIntro("02", "EXPERIENCE", "From building applications<br>to securing them", "A career across application security, engineering, research, and teaching.", `<a class="button button-secondary" href="assets/files/kevin-dsouza-resume.pdf" target="_blank" rel="noopener">${icon("download")} Full resume</a>`)}
-  <section class="wrap career-summary" aria-label="Career overview"><div><span class="eyebrow">2018</span><span>Web development</span></div><span class="career-line"></span><div><span class="eyebrow">2022</span><span>Application security</span></div><span class="career-line"></span><div><span class="eyebrow accent">TODAY</span><span>Enterprise AppSec leadership</span></div></section>
-  <section class="wrap career-section"><div class="career-selector"><p class="eyebrow career-label">THE JOURNEY <span>${experience.length} ROLES</span></p><div class="role-tabs" aria-label="Career roles">${experience.map((x, i) => `<a id="tab-${x.id}" class="role-tab${i === 0 ? " selected" : ""}" href="#panel-${x.id}" data-role="${x.id}"><span class="timeline-node"></span><span class="role-tab-copy"><span class="tab-date">${e(x.date)}</span><strong>${e(x.short)}</strong><span class="tab-role">${e(x.level === "Vice President" ? "Lead Analyst / VP" : x.level === "Assistant Vice President" ? "Senior Analyst / AVP" : x.role)}</span></span>${icon("chevron-right")}</a>`).join("")}</div></div><div class="career-detail">${experience.map(rolePanel).join("")}<div class="career-pagination"><button type="button" class="icon-button" data-role-prev aria-label="Previous role">${icon("arrow-left")}</button><span id="role-position" class="mono" aria-live="polite">01 / ${String(experience.length).padStart(2, "0")}</span><button type="button" class="icon-button" data-role-next aria-label="Next role">${icon("arrow-right")}</button></div></div></section><section class="career-footnote wrap"><span>${icon("graduation-cap")} M.S. Cybersecurity, Northeastern University</span>${link("about.html#skills", "Skills & credentials")}</section>`;
+  <section class="wrap career-section"><div class="career-selector"><p class="eyebrow career-label">THE JOURNEY <span>${experience.length} ROLES</span></p><div class="role-tabs" aria-label="Career roles">${experience.map((x, i) => `<a id="tab-${x.id}" class="role-tab${i === 0 ? " selected" : ""}" href="#panel-${x.id}" data-role="${x.id}"><span class="timeline-node"></span><span class="role-tab-copy"><span class="tab-date">${e(x.date)}</span><strong>${e(x.short)}</strong><span class="tab-role">${e(x.id === "citi" ? "VP and AVP" : x.role)}</span></span>${icon("chevron-right")}</a>`).join("")}</div></div><div class="career-detail">${experience.map(rolePanel).join("")}<div class="career-pagination"><button type="button" class="icon-button" data-role-prev aria-label="Previous role">${icon("arrow-left")}</button><span id="role-position" class="mono" aria-live="polite">01 / ${String(experience.length).padStart(2, "0")}</span><button type="button" class="icon-button" data-role-next aria-label="Next role">${icon("arrow-right")}</button></div></div></section><section class="career-footnote wrap"><span>${icon("graduation-cap")} M.S. Cybersecurity, Northeastern University</span>${link("about.html#skills", "Skills & credentials")}</section>`;
 }
 
 export function projectPage() {

@@ -21,16 +21,15 @@ for (const file of [
 }
 assert.equal(new Set(experience.map((x) => x.id)).size, experience.length);
 assert.equal(new Set(projects.map((x) => x.id)).size, projects.length);
-assert.equal(experience[0].date, "May 2026 - Present");
-assert.equal(experience[1].date, "Feb 2023 - May 2026");
+assert.equal(experience[0].id, "citi");
+assert.equal(experience[0].date, "Feb 2023 - Present");
+assert.equal(experience[0].positions[0].date, "May 2026 - Present");
+assert.equal(experience[0].positions[1].date, "Feb 2023 - May 2026");
 assert.equal(experience.filter((x) => x.current).length, 1);
-assert.equal(experience.length, 7);
-assert.equal(experience[2].id, "netbrain");
-assert.equal(experience[3].id, "neu-research");
-assert.deepEqual(
-  experience.find((x) => x.id === "citi-avp").projects,
-  ["sage", "burp-tooling"],
-);
+assert.equal(experience.length, 6);
+assert.equal(experience[1].id, "netbrain");
+assert.equal(experience[2].id, "neu-research");
+assert.deepEqual(experience[0].projects, ["sage", "burp-tooling"]);
 assert.equal(
   experience.find((x) => x.id === "netbrain").project,
   "security-pipelines",
