@@ -143,15 +143,54 @@ export const experience = [
     location: "Burlington, MA",
     type: "Professional",
     intro:
-      "Bringing hands-on testing and continuous security validation into software delivery.",
-    highlights: [
-      "Tested web applications and APIs with Burp Suite and Postman, focusing on authentication, input validation, and business logic.",
-      "Triaged SonarQube, Snyk, Qualys, and Mend findings, identifying exploitable vulnerabilities and vulnerable third-party components.",
-      "Integrated SAST, DAST, and SCA into Jenkins pipelines, including automated Qualys scanning.",
-      "Automated Linux and Windows test environments using Jenkins, PowerShell, and VMware Horizon.",
-      "Configured reverse proxies and documented assessment reports, remediation, policies, and security workflows in Confluence.",
+      "Product security for NetBrain's enterprise software: manual web and API assessments, security checks in the release path, and the Windows and Linux environments those tests ran on.",
+    areas: [
+      {
+        title: "Web and API assessments",
+        highlights: [
+          "Tested web applications and APIs with Burp Suite and Postman, covering authentication, authorization, input validation, and business logic.",
+          "Ran those tests in isolated environments so a weakness could be reproduced without touching production.",
+          "Separated exploitable findings from scanner noise, then wrote the evidence, the impact, and the recommended fix.",
+          "Worked with developers while they investigated a finding and validated that the fix held.",
+        ],
+      },
+      {
+        title: "Security in the release path",
+        highlights: [
+          "Built and maintained Jenkins pipelines for software builds and application security testing.",
+          "Brought SonarQube, Qualys, Snyk, and Mend into that path so static analysis, dynamic scanning, and dependency review happened before a release.",
+          "Configured Qualys DAST for standalone scans and for runs inside Jenkins.",
+          "Triaged results against the application itself, so priority went to exploitable issues and false positives were set aside.",
+          "Reviewed vulnerable third-party dependencies in Mend and recommended an upgrade or a compensating control.",
+        ],
+      },
+      {
+        title: "Test environments",
+        highlights: [
+          "Provisioned Linux backend and Windows frontend virtual machines with Jenkins and PowerShell.",
+          "Maintained the VMware Horizon environments used for manual assessments and automated scans.",
+          "Configured reverse proxies and used mRemoteNG to reach those test systems.",
+        ],
+      },
+      {
+        title: "Documentation",
+        highlights: [
+          "Recorded findings, remediation guidance, security policies, and onboarding material in Confluence so the same assessment could be repeated.",
+        ],
+      },
     ],
-    tags: ["Jenkins", "Burp Suite", "SAST / DAST / SCA", "PowerShell"],
+    tags: [
+      "Burp Suite",
+      "Postman",
+      "Jenkins",
+      "SonarQube",
+      "Qualys",
+      "Snyk",
+      "Mend",
+      "VMware Horizon",
+      "PowerShell",
+      "Confluence",
+    ],
     project: "security-pipelines",
   },
   {

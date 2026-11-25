@@ -240,6 +240,14 @@ function roleBody(x) {
       )
       .join("")}</div>`;
   }
+  if (x.areas) {
+    return `<h3 class="eyebrow">THE WORK</h3><div class="role-positions">${x.areas
+      .map(
+        (a) =>
+          `<section class="role-position"><div class="role-position-heading"><h3>${e(a.title)}</h3></div><ul class="contribution-list">${contributionItems(a.highlights)}</ul></section>`,
+      )
+      .join("")}</div>`;
+  }
   return `<h3 class="eyebrow">CONTRIBUTIONS</h3><ul class="contribution-list">${contributionItems(x.highlights)}</ul>`;
 }
 
